@@ -21,8 +21,8 @@ import type {
   activity_fields,
   activity_kind,
 } from "@sleet-js/intear-api-tool-box";
-import { api_intear_activity_query } from "../../src";
-import { split_argv } from "../fun/split_argv";
+import { api_intear_activity_query } from "../src";
+import { split_argv } from "./fun/split_argv";
 
 // --- argv ----------------------------------------------------------
 const { positional, flags } = split_argv(process.argv.slice(2));

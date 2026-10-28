@@ -12,8 +12,8 @@
 //   bun bin/intear/intear_positions_get.ts sleet.near --limit 50
 // ========================================
 
-import { api_intear_positions_get } from "../../src";
-import { split_argv } from "../fun/split_argv";
+import { api_intear_positions_get } from "../src";
+import { split_argv } from "./fun/split_argv";
 
 // --- argv ----------------------------------------------------------
 const { positional, flags } = split_argv(process.argv.slice(2));

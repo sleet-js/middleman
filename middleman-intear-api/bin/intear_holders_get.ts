@@ -13,8 +13,8 @@
 //   bun bin/intear/intear_holders_get.ts wrap.near --cursor eyJ...   # next page
 // ========================================
 
-import { api_intear_holders_get } from "../../src";
-import { split_argv } from "../fun/split_argv";
+import { api_intear_holders_get } from "../src";
+import { split_argv } from "./fun/split_argv";
 
 // --- argv ----------------------------------------------------------
 const { positional, flags } = split_argv(process.argv.slice(2));

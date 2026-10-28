@@ -10,8 +10,8 @@
 //   bun bin/intear/intear_accounts_search.ts wrap --limit 20
 // ========================================
 
-import { api_intear_accounts_search } from "../../src";
-import { split_argv } from "../fun/split_argv";
+import { api_intear_accounts_search } from "../src";
+import { split_argv } from "./fun/split_argv";
 
 // --- argv ----------------------------------------------------------
 const { positional, flags } = split_argv(process.argv.slice(2));

@@ -20,8 +20,8 @@ import type {
   candle_resolution,
   candle_series,
 } from "@sleet-js/intear-api-tool-box";
-import { api_intear_candles_get } from "../../src";
-import { split_argv } from "../fun/split_argv";
+import { api_intear_candles_get } from "../src";
+import { split_argv } from "./fun/split_argv";
 
 // --- argv ----------------------------------------------------------
 const { positional, flags } = split_argv(process.argv.slice(2));

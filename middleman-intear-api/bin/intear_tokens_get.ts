@@ -22,8 +22,8 @@ import type {
 import {
   api_intear_token_fields,
   api_intear_tokens_get,
-} from "../../src";
-import { split_argv } from "../fun/split_argv";
+} from "../src";
+import { split_argv } from "./fun/split_argv";
 
 // --- FLAGS ---------------------------------------------------------
 // the flags of this bin that take no value.

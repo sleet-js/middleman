@@ -16,8 +16,8 @@ import type { token_requested_field } from "@sleet-js/intear-api-tool-box";
 import {
   api_intear_token_fields,
   api_intear_tokens_search,
-} from "../../src";
-import { split_argv } from "../fun/split_argv";
+} from "../src";
+import { split_argv } from "./fun/split_argv";
 
 // --- argv ----------------------------------------------------------
 const { positional, flags } = split_argv(process.argv.slice(2));

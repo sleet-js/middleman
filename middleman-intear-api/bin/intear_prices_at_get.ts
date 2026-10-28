@@ -18,8 +18,8 @@
 //   bun bin/intear/intear_prices_at_get.ts wrap.near --also usdt.tether-token.near@1767225600000
 // ========================================
 
-import { api_intear_prices_at_get } from "../../src";
-import { split_argv } from "../fun/split_argv";
+import { api_intear_prices_at_get } from "../src";
+import { split_argv } from "./fun/split_argv";
 
 // --- CONFIG --------------------------------------------------------
 const ONE_HOUR_MS = 60 * 60 * 1000;
