@@ -3,7 +3,7 @@
 // types for the pool objects returned by the rhea indexer.
 // ========================================
 
-export interface RheaPool {
+export interface RHEA_POOL {
   pool_kind: string;
   token_account_ids: string[];
   amounts: string[];
@@ -19,26 +19,26 @@ export interface RheaPool {
   [key: string]: unknown;
 }
 
-export interface RheaFetchAllPoolsResponse {
+export interface RHEA_FETCH_ALL_POOLS_RESPONSE {
   block_number: number;
   block_time: number;
-  simplePools: RheaPool[];
-  unRatedPools: RheaPool[];
-  ratedPools: RheaPool[];
+  simplePools: RHEA_POOL[];
+  unRatedPools: RHEA_POOL[];
+  ratedPools: RHEA_POOL[];
 }
 
-export type RheaPoolListResponse = RheaPool[];
+export type RHEA_POOL_LIST_RESPONSE = RHEA_POOL[];
 
-export interface RheaPoolSearchResponse {
+export interface RHEA_POOL_SEARCH_RESPONSE {
   code?: number;
   message?: string;
   data?: {
-    list: RheaPool[];
+    list: RHEA_POOL[];
     total: number;
   };
 }
 
-export interface RheaTimestampResponse {
+export interface RHEA_TIMESTAMP_RESPONSE {
   ts: number;
 }
 // ========================================

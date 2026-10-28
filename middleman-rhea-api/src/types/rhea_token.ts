@@ -3,7 +3,7 @@
 // types for token metadata and price responses.
 // ========================================
 
-export interface RheaToken {
+export interface RHEA_TOKEN {
   spec: string;
   name: string;
   symbol: string;
@@ -14,15 +14,15 @@ export interface RheaToken {
   [key: string]: unknown;
 }
 
-export type RheaTokenMap = Record<string, RheaToken>;
+export type RHEA_TOKEN_MAP = Record<string, RHEA_TOKEN>;
 
-export interface RheaTokenPrice {
+export interface RHEA_TOKEN_PRICE {
   price: string;
   symbol: string;
   decimal: number;
   [key: string]: unknown;
 }
 
-export type RheaTokenPriceMap = Record<string, RheaTokenPrice>;
+export type RHEA_TOKEN_PRICE_MAP = Record<string, RHEA_TOKEN_PRICE>;
 // ========================================
 // copyright 2026 by sleet.near

@@ -4,10 +4,10 @@
 // ========================================
 
 import { api_rhea_get } from "./api_rhea_get";
-import type { RheaTimestampResponse } from "../types/rhea_pool";
+import type { RHEA_TIMESTAMP_RESPONSE } from "../types/rhea_pool";
 
-export async function api_rhea_timestamp(): Promise<RheaTimestampResponse> {
-  return api_rhea_get<RheaTimestampResponse>({
+export async function api_rhea_timestamp(): Promise<RHEA_TIMESTAMP_RESPONSE> {
+  return api_rhea_get<RHEA_TIMESTAMP_RESPONSE>({
     key: "rhea_timestamp",
     label: "RHEA TIMESTAMP",
     fallback: "api_rhea_timestamp failed",

@@ -4,10 +4,10 @@
 // ========================================
 
 import { api_rhea_get } from "./api_rhea_get";
-import type { RheaTokenPriceMap } from "../types/rhea_token";
+import type { RHEA_TOKEN_PRICE_MAP } from "../types/rhea_token";
 
-export async function api_rhea_list_token_price(): Promise<RheaTokenPriceMap> {
-  return api_rhea_get<RheaTokenPriceMap>({
+export async function api_rhea_list_token_price(): Promise<RHEA_TOKEN_PRICE_MAP> {
+  return api_rhea_get<RHEA_TOKEN_PRICE_MAP>({
     key: "rhea_list_token_price",
     label: "RHEA LIST TOKEN PRICE",
     fallback: "api_rhea_list_token_price failed",

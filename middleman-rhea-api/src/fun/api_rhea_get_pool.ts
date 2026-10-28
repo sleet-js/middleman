@@ -4,7 +4,7 @@
 // ========================================
 
 import { api_rhea_get } from "./api_rhea_get";
-import type { RheaPool } from "../types/rhea_pool";
+import type { RHEA_POOL } from "../types/rhea_pool";
 
 export interface API_RHEA_GET_POOL_PARAMS {
   pool_id: string | number;
@@ -12,8 +12,8 @@ export interface API_RHEA_GET_POOL_PARAMS {
 
 export async function api_rhea_get_pool(
   params: API_RHEA_GET_POOL_PARAMS,
-): Promise<RheaPool> {
-  return api_rhea_get<RheaPool>({
+): Promise<RHEA_POOL> {
+  return api_rhea_get<RHEA_POOL>({
     key: "rhea_get_pool",
     params,
     label: "RHEA GET POOL",

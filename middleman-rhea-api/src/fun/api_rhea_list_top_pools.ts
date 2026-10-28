@@ -4,10 +4,10 @@
 // ========================================
 
 import { api_rhea_get } from "./api_rhea_get";
-import type { RheaPoolListResponse } from "../types/rhea_pool";
+import type { RHEA_POOL_LIST_RESPONSE } from "../types/rhea_pool";
 
-export async function api_rhea_list_top_pools(): Promise<RheaPoolListResponse> {
-  return api_rhea_get<RheaPoolListResponse>({
+export async function api_rhea_list_top_pools(): Promise<RHEA_POOL_LIST_RESPONSE> {
+  return api_rhea_get<RHEA_POOL_LIST_RESPONSE>({
     key: "rhea_list_top_pools",
     label: "RHEA LIST TOP POOLS",
     fallback: "api_rhea_list_top_pools failed",

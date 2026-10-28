@@ -4,7 +4,7 @@
 // ========================================
 
 import { api_rhea_get } from "./api_rhea_get";
-import type { RheaPoolSearchResponse } from "../types/rhea_pool";
+import type { RHEA_POOL_SEARCH_RESPONSE } from "../types/rhea_pool";
 
 export interface API_RHEA_POOL_SEARCH_PARAMS {
   type?: string;
@@ -22,8 +22,8 @@ export interface API_RHEA_POOL_SEARCH_PARAMS {
 
 export async function api_rhea_pool_search(
   params: API_RHEA_POOL_SEARCH_PARAMS = {},
-): Promise<RheaPoolSearchResponse> {
-  return api_rhea_get<RheaPoolSearchResponse>({
+): Promise<RHEA_POOL_SEARCH_RESPONSE> {
+  return api_rhea_get<RHEA_POOL_SEARCH_RESPONSE>({
     key: "rhea_pool_search",
     params,
     label: "RHEA POOL SEARCH",

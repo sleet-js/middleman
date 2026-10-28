@@ -5,10 +5,10 @@
 // ========================================
 
 import { api_rhea_get } from "./api_rhea_get";
-import type { RheaFetchAllPoolsResponse } from "../types/rhea_pool";
+import type { RHEA_FETCH_ALL_POOLS_RESPONSE } from "../types/rhea_pool";
 
-export async function api_rhea_fetch_all_pools(): Promise<RheaFetchAllPoolsResponse> {
-  return api_rhea_get<RheaFetchAllPoolsResponse>({
+export async function api_rhea_fetch_all_pools(): Promise<RHEA_FETCH_ALL_POOLS_RESPONSE> {
+  return api_rhea_get<RHEA_FETCH_ALL_POOLS_RESPONSE>({
     key: "rhea_fetch_all_pools",
     label: "RHEA FETCH ALL POOLS",
     fallback: "api_rhea_fetch_all_pools failed",
