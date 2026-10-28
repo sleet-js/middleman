@@ -1,0 +1,18 @@
+// ========================================
+// API_RHEA_FETCH_ALL_POOLS
+// GET /fetchAllPools — every v1 pool (simple/stable/rated) plus
+// block height/time.
+// ========================================
+
+import { api_rhea_get } from "./api_rhea_get";
+import type { RheaFetchAllPoolsResponse } from "../types/rhea_pool";
+
+export async function api_rhea_fetch_all_pools(): Promise<RheaFetchAllPoolsResponse> {
+  return api_rhea_get<RheaFetchAllPoolsResponse>({
+    key: "rhea_fetch_all_pools",
+    label: "RHEA FETCH ALL POOLS",
+    fallback: "api_rhea_fetch_all_pools failed",
+  });
+}
+// ========================================
+// copyright 2026 by sleet.near
