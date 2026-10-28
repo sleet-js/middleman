@@ -5,7 +5,7 @@ clean ts library for interacting with different APIs
 <br/>
 ℹ️ run `bun init middleman-name` to create new, only human run this command.
 
-- 👀 middleman-intear-api
+- ✅ middleman-intear-api
 - 👀 middleman-intear-dex-api
 - 👀 middleman-rhea-api
 
