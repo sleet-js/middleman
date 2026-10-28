@@ -19,12 +19,22 @@ export interface RHEA_POOL {
   [key: string]: unknown;
 }
 
+export interface RHEA_FETCH_ALL_POOL {
+  id: string | number;
+  tokenIds: string[];
+  supplies: Record<string, string>;
+  fee: number;
+  shareSupply: string;
+  pool_kind: string;
+  [key: string]: unknown;
+}
+
 export interface RHEA_FETCH_ALL_POOLS_RESPONSE {
   block_number: number;
   block_time: number;
-  simplePools: RHEA_POOL[];
-  unRatedPools: RHEA_POOL[];
-  ratedPools: RHEA_POOL[];
+  simplePools: RHEA_FETCH_ALL_POOL[];
+  unRatedPools: RHEA_FETCH_ALL_POOL[];
+  ratedPools: RHEA_FETCH_ALL_POOL[];
 }
 
 export type RHEA_POOL_LIST_RESPONSE = RHEA_POOL[];
