@@ -29,6 +29,7 @@ export * from "./fun/api_intear_holders_get";
 export * from "./fun/api_intear_positions_get";
 export * from "./fun/api_intear_prices_at_get";
 export * from "./fun/api_intear_accounts_search";
+export * from "./fun/api_intear_traders_get";
 
 export { INTEAR_BASE_URL } from "./stuff/intear_base_url";
 export { INTEAR_ENDPOINT_PATHS } from "./stuff/intear_endpoint_paths";

@@ -3,7 +3,7 @@
 cli bins for the intear api, called through `middleman/intear`. the api
 is public and has no auth, so these bins need no base url.
 
-**one bin per one-shot endpoint — 12 bins over 11 endpoints.** the api's
+**one bin per one-shot endpoint — 13 bins over 12 endpoints.** the api's
 websocket endpoints (`*.subscribe`) are intentionally not covered, since
 `middleman/intear/` is HTTP-only. `/tokens` gets two bins, one for each
 http method.
@@ -140,6 +140,17 @@ GET /accounts/search — accounts by id prefix, for an account picker.
 
 ```sh
 bun middleman-intear-api/bin/intear_accounts_search.ts sleet --limit 20
+```
+
+## intear_traders_get
+
+GET /traders — a token's top traders by profit over a time range, highest
+`pnl_usd` first. the range is `24h`, `7d`, `30d` or `all`, and defaults to
+`24h`.
+
+```sh
+bun middleman-intear-api/bin/intear_traders_get.ts token.intear.near
+bun middleman-intear-api/bin/intear_traders_get.ts token.intear.near 7d --top 10
 ```
 
 ========================================

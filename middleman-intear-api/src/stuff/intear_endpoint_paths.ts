@@ -20,6 +20,7 @@ export const INTEAR_ENDPOINT_PATHS = {
   api_intear_positions: "/positions",
   api_intear_prices_at: "/prices/at",
   api_intear_accounts_search: "/accounts/search",
+  api_intear_traders: "/traders",
   api_intear_schema: "/schema",
 } as const;
 

@@ -34,7 +34,7 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@sleet-js/intear-api-tool-box": "^0.1.0"
+    "@sleet-js/intear-api-tool-box": "^0.1.1"
   },
   "devDependencies": {
     "@types/bun": "latest",
