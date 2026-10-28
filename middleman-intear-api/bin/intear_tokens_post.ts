@@ -7,12 +7,12 @@
 // url: the body limit is 64KB, against ~8KB for the url.
 //
 // argv:
-//   bun bin/intear/intear_tokens_post.ts [token_ids] [--fields a,b] [--limit n]
+//   bun middleman-intear-api/bin/intear_tokens_post.ts [token_ids] [--fields a,b] [--limit n]
 //       [--sort field] [--desc] [--where key=value]
 //
 // examples:
-//   bun bin/intear/intear_tokens_post.ts wrap.near
-//   bun bin/intear/intear_tokens_post.ts --fields symbol,icon --limit 20 --sort volume_usd_24h --desc
+//   bun middleman-intear-api/bin/intear_tokens_post.ts wrap.near
+//   bun middleman-intear-api/bin/intear_tokens_post.ts --fields symbol,icon --limit 20 --sort volume_usd_24h --desc
 // ========================================
 
 import type {
@@ -37,7 +37,7 @@ const { positional, flags, seen } = split_argv(process.argv.slice(2), {
 
 if (process.argv.length <= 2) {
   console.error(
-    "usage: bun bin/intear/intear_tokens_post.ts [token_ids] [--fields a,b] " +
+    "usage: bun middleman-intear-api/bin/intear_tokens_post.ts [token_ids] [--fields a,b] " +
       "[--limit n] [--sort field] [--desc] [--where key=value]",
   );
   process.exit(1);

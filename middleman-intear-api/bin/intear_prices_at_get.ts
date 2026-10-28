@@ -5,7 +5,7 @@
 // one-line summary.
 //
 // argv:
-//   bun bin/intear/intear_prices_at_get.ts <token_id> [timestamp_millis]
+//   bun middleman-intear-api/bin/intear_prices_at_get.ts <token_id> [timestamp_millis]
 //       [--also token_id@timestamp_millis]
 //
 // timestamp defaults to one hour ago, which is the common "what was
@@ -13,9 +13,9 @@
 // exact block.
 //
 // examples:
-//   bun bin/intear/intear_prices_at_get.ts wrap.near
-//   bun bin/intear/intear_prices_at_get.ts wrap.near 1767225600000
-//   bun bin/intear/intear_prices_at_get.ts wrap.near --also usdt.tether-token.near@1767225600000
+//   bun middleman-intear-api/bin/intear_prices_at_get.ts wrap.near
+//   bun middleman-intear-api/bin/intear_prices_at_get.ts wrap.near 1767225600000
+//   bun middleman-intear-api/bin/intear_prices_at_get.ts wrap.near --also usdt.tether-token.near@1767225600000
 // ========================================
 
 import { api_intear_prices_at_get } from "../src";
@@ -30,7 +30,7 @@ const { positional, flags } = split_argv(process.argv.slice(2));
 const token_id = positional[0];
 if (token_id === undefined) {
   console.error(
-    "usage: bun bin/intear/intear_prices_at_get.ts <token_id> [timestamp_millis] " +
+    "usage: bun middleman-intear-api/bin/intear_prices_at_get.ts <token_id> [timestamp_millis] " +
       "[--also token_id@timestamp_millis]",
   );
   process.exit(1);

@@ -5,16 +5,16 @@
 // what the FEED page wants.
 //
 // argv:
-//   bun bin/intear/intear_activity_query.ts <account_id> [kinds]
+//   bun middleman-intear-api/bin/intear_activity_query.ts <account_id> [kinds]
 //       [--token t] [--side buy|sell] [--min-usd v] [--fields a,b]
 //       [--limit n] [--order newest|oldest] [--cursor c]
 //
 // kinds defaults to both trade and transfer, comma separated.
 //
 // examples:
-//   bun bin/intear/intear_activity_query.ts sleet.near
-//   bun bin/intear/intear_activity_query.ts sleet.near trade --limit 20
-//   bun bin/intear/intear_activity_query.ts sleet.near trade,transfer --token wrap.near
+//   bun middleman-intear-api/bin/intear_activity_query.ts sleet.near
+//   bun middleman-intear-api/bin/intear_activity_query.ts sleet.near trade --limit 20
+//   bun middleman-intear-api/bin/intear_activity_query.ts sleet.near trade,transfer --token wrap.near
 // ========================================
 
 import type {
@@ -30,7 +30,7 @@ const { positional, flags } = split_argv(process.argv.slice(2));
 const account_id = positional[0];
 if (account_id === undefined) {
   console.error(
-    "usage: bun bin/intear/intear_activity_query.ts <account_id> [kinds] " +
+    "usage: bun middleman-intear-api/bin/intear_activity_query.ts <account_id> [kinds] " +
       "[--token t] [--side buy|sell] [--min-usd v] [--fields a,b] [--limit n] [--order newest|oldest]",
   );
   process.exit(1);

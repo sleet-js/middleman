@@ -3,13 +3,13 @@
 // runnable bin for GET /transfers via middleman/intear.
 //
 // argv:
-//   bun bin/intear/intear_transfers_query.ts <account_id> [--token t] [--sender a.near]
+//   bun middleman-intear-api/bin/intear_transfers_query.ts <account_id> [--token t] [--sender a.near]
 //       [--receiver a.near] [--kind k] [--fields a,b] [--limit n]
 //       [--order newest|oldest] [--cursor c]
 //
 // examples:
-//   bun bin/intear/intear_transfers_query.ts sleet.near --limit 20
-//   bun bin/intear/intear_transfers_query.ts sleet.near --sender sleet.near --kind mint
+//   bun middleman-intear-api/bin/intear_transfers_query.ts sleet.near --limit 20
+//   bun middleman-intear-api/bin/intear_transfers_query.ts sleet.near --sender sleet.near --kind mint
 // ========================================
 
 import type { transfer_requested_field } from "@sleet-js/intear-api-tool-box";
@@ -26,7 +26,7 @@ const { positional, flags } = split_argv(process.argv.slice(2));
 const account_id = positional[0];
 if (account_id === undefined) {
   console.error(
-    "usage: bun bin/intear/intear_transfers_query.ts <account_id> [--token t] [--sender a.near] " +
+    "usage: bun middleman-intear-api/bin/intear_transfers_query.ts <account_id> [--token t] [--sender a.near] " +
       "[--receiver a.near] [--kind k] [--fields a,b] [--limit n] [--order newest|oldest]",
   );
   process.exit(1);

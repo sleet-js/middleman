@@ -3,15 +3,15 @@
 // runnable bin for GET /trades via middleman/intear.
 //
 // argv:
-//   bun bin/intear/intear_trades_query.ts [--token t] [--side buy|sell]
+//   bun middleman-intear-api/bin/intear_trades_query.ts [--token t] [--side buy|sell]
 //       [--counterparty a.near] [--trader a.near] [--min-usd v]
 //       [--fields a,b] [--limit n] [--order newest|oldest]
 //       [--after-millis n] [--before-millis n] [--cursor c]
 //
 // examples:
-//   bun bin/intear/intear_trades_query.ts --fields token,price_usd,usd_value --limit 20
-//   bun bin/intear/intear_trades_query.ts --token wrap.near --side buy --limit 10
-//   bun bin/intear/intear_trades_query.ts --min-usd 10000 --limit 5 --order oldest
+//   bun middleman-intear-api/bin/intear_trades_query.ts --fields token,price_usd,usd_value --limit 20
+//   bun middleman-intear-api/bin/intear_trades_query.ts --token wrap.near --side buy --limit 10
+//   bun middleman-intear-api/bin/intear_trades_query.ts --min-usd 10000 --limit 5 --order oldest
 // ========================================
 
 import type { trade_requested_field } from "@sleet-js/intear-api-tool-box";

@@ -5,14 +5,14 @@
 // one-line summary.
 //
 // argv:
-//   bun bin/intear/intear_tokens_get.ts [token_ids] [--fields a,b] [--limit n]
+//   bun middleman-intear-api/bin/intear_tokens_get.ts [token_ids] [--fields a,b] [--limit n]
 //       [--sort field] [--desc] [--where key=value] [--account account.near]
 //
 // examples:
-//   bun bin/intear/intear_tokens_get.ts wrap.near
-//   bun bin/intear/intear_tokens_get.ts wrap.near --fields symbol,price_usd,volume_usd_24h
-//   bun bin/intear/intear_tokens_get.ts --fields symbol,volume_usd_24h --limit 20 --sort volume_usd_24h --desc
-//   bun bin/intear/intear_tokens_get.ts --where min_reputation=NotFake --limit 20
+//   bun middleman-intear-api/bin/intear_tokens_get.ts wrap.near
+//   bun middleman-intear-api/bin/intear_tokens_get.ts wrap.near --fields symbol,price_usd,volume_usd_24h
+//   bun middleman-intear-api/bin/intear_tokens_get.ts --fields symbol,volume_usd_24h --limit 20 --sort volume_usd_24h --desc
+//   bun middleman-intear-api/bin/intear_tokens_get.ts --where min_reputation=NotFake --limit 20
 // ========================================
 
 import type {
@@ -42,7 +42,7 @@ const { positional, flags, seen } = split_argv(process.argv.slice(2), {
 // mistaken invocation than a deliberate "call with defaults".
 if (process.argv.length <= 2) {
   console.error(
-    "usage: bun bin/intear/intear_tokens_get.ts [token_ids] [--fields a,b] [--limit n] " +
+    "usage: bun middleman-intear-api/bin/intear_tokens_get.ts [token_ids] [--fields a,b] [--limit n] " +
       "[--sort field] [--desc] [--where key=value] [--account account.near]",
   );
   process.exit(1);

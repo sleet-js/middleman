@@ -5,11 +5,11 @@
 // one-line summary.
 //
 // argv:
-//   bun bin/intear/intear_positions_get.ts <account_id> [--limit n]
+//   bun middleman-intear-api/bin/intear_positions_get.ts <account_id> [--limit n]
 //
 // examples:
-//   bun bin/intear/intear_positions_get.ts sleet.near
-//   bun bin/intear/intear_positions_get.ts sleet.near --limit 50
+//   bun middleman-intear-api/bin/intear_positions_get.ts sleet.near
+//   bun middleman-intear-api/bin/intear_positions_get.ts sleet.near --limit 50
 // ========================================
 
 import { api_intear_positions_get } from "../src";
@@ -21,7 +21,7 @@ const { positional, flags } = split_argv(process.argv.slice(2));
 const account_id = positional[0];
 if (account_id === undefined) {
   console.error(
-    "usage: bun bin/intear/intear_positions_get.ts <account_id> [--limit n]",
+    "usage: bun middleman-intear-api/bin/intear_positions_get.ts <account_id> [--limit n]",
   );
   process.exit(1);
 }

@@ -3,11 +3,11 @@
 // runnable bin for GET /accounts/search via middleman/intear.
 //
 // argv:
-//   bun bin/intear/intear_accounts_search.ts <prefix> [--limit n]
+//   bun middleman-intear-api/bin/intear_accounts_search.ts <prefix> [--limit n]
 //
 // examples:
-//   bun bin/intear/intear_accounts_search.ts sleet
-//   bun bin/intear/intear_accounts_search.ts wrap --limit 20
+//   bun middleman-intear-api/bin/intear_accounts_search.ts sleet
+//   bun middleman-intear-api/bin/intear_accounts_search.ts wrap --limit 20
 // ========================================
 
 import { api_intear_accounts_search } from "../src";
@@ -19,7 +19,7 @@ const { positional, flags } = split_argv(process.argv.slice(2));
 const prefix = positional[0];
 if (prefix === undefined) {
   console.error(
-    "usage: bun bin/intear/intear_accounts_search.ts <prefix> [--limit n]",
+    "usage: bun middleman-intear-api/bin/intear_accounts_search.ts <prefix> [--limit n]",
   );
   process.exit(1);
 }

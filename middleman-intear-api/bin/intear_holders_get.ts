@@ -5,12 +5,12 @@
 // one-line summary.
 //
 // argv:
-//   bun bin/intear/intear_holders_get.ts <token_id> [--limit n] [--cursor c]
+//   bun middleman-intear-api/bin/intear_holders_get.ts <token_id> [--limit n] [--cursor c]
 //
 // examples:
-//   bun bin/intear/intear_holders_get.ts wrap.near
-//   bun bin/intear/intear_holders_get.ts wrap.near --limit 20
-//   bun bin/intear/intear_holders_get.ts wrap.near --cursor eyJ...   # next page
+//   bun middleman-intear-api/bin/intear_holders_get.ts wrap.near
+//   bun middleman-intear-api/bin/intear_holders_get.ts wrap.near --limit 20
+//   bun middleman-intear-api/bin/intear_holders_get.ts wrap.near --cursor eyJ...   # next page
 // ========================================
 
 import { api_intear_holders_get } from "../src";
@@ -22,7 +22,7 @@ const { positional, flags } = split_argv(process.argv.slice(2));
 const token_id = positional[0];
 if (token_id === undefined) {
   console.error(
-    "usage: bun bin/intear/intear_holders_get.ts <token_id> [--limit n] [--cursor c]",
+    "usage: bun middleman-intear-api/bin/intear_holders_get.ts <token_id> [--limit n] [--cursor c]",
   );
   process.exit(1);
 }
