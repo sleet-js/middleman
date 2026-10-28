@@ -14,6 +14,7 @@
 
 import { api_intear_positions_get } from "../src";
 import { split_argv } from "./fun/split_argv";
+import { check_limit } from "./fun/check_limit";
 
 // --- argv ----------------------------------------------------------
 const { positional, flags } = split_argv(process.argv.slice(2));
@@ -27,10 +28,13 @@ if (account_id === undefined) {
 }
 
 const limit_raw = flags.get("--limit");
+// --- WHY --- the api caps positions at 1000 rows, so a larger limit
+// is a 400 rather than a bigger page.
+const limit = check_limit(limit_raw, { min: 1, max: 1000 });
 
 const response = await api_intear_positions_get({
   account: account_id,
-  limit: limit_raw !== undefined ? Number(limit_raw) : undefined,
+  limit,
 });
 
 // --- summary -------------------------------------------------------

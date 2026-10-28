@@ -19,10 +19,7 @@ import type {
   token_requested_field,
   token_sort,
 } from "@sleet-js/intear-api-tool-box";
-import {
-  api_intear_token_fields,
-  api_intear_tokens_post,
-} from "../src";
+import { api_intear_token_fields, api_intear_tokens_post } from "../src";
 import { split_argv } from "./fun/split_argv";
 
 // --- FLAGS ---------------------------------------------------------
@@ -52,6 +49,15 @@ const token_ids =
 const fields_raw = flags.get("--fields");
 const sort_field = flags.get("--sort");
 const limit_raw = flags.get("--limit");
+
+// --- WHY --- the api refuses a limit without a sort: a page of an
+// unsorted list is not a page of anything, so it answers "`limit` and
+// `offset` need a `sort`". checking it here gives a usage line
+// instead of a stack trace.
+if (limit_raw !== undefined && sort_field === undefined) {
+  console.error("--limit needs --sort, the api can only page a sorted list");
+  process.exit(1);
+}
 
 // --- WHY --- `account_id` is not in the selectable field list on any
 // endpoint: it is always the row's leading column, returned whether
@@ -103,4 +109,3 @@ for (const row of response.rows) {
 }
 // ========================================
 // copyright 2026 by sleet.near
-// ========================================

@@ -13,11 +13,9 @@
 // ========================================
 
 import type { token_requested_field } from "@sleet-js/intear-api-tool-box";
-import {
-  api_intear_token_fields,
-  api_intear_tokens_search,
-} from "../src";
+import { api_intear_token_fields, api_intear_tokens_search } from "../src";
 import { split_argv } from "./fun/split_argv";
+import { check_limit } from "./fun/check_limit";
 
 // --- argv ----------------------------------------------------------
 const { positional, flags } = split_argv(process.argv.slice(2));
@@ -49,11 +47,14 @@ for (const field of requested) {
 }
 
 const limit_raw = flags.get("--limit");
+// --- WHY --- the api caps tokens.search at 100 rows, so a larger
+// limit is a 400 rather than a bigger page.
+const limit = check_limit(limit_raw, { min: 1, max: 100 });
 
 const response = await api_intear_tokens_search({
   q,
   fields: requested as token_requested_field[],
-  limit: limit_raw !== undefined ? Number(limit_raw) : undefined,
+  limit,
   holder: flags.get("--holder"),
   parent: flags.get("--parent"),
   min_reputation: flags.get("--min-reputation") as never,

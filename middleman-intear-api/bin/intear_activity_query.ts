@@ -23,6 +23,7 @@ import type {
 } from "@sleet-js/intear-api-tool-box";
 import { api_intear_activity_query } from "../src";
 import { split_argv } from "./fun/split_argv";
+import { check_limit } from "./fun/check_limit";
 
 // --- argv ----------------------------------------------------------
 const { positional, flags } = split_argv(process.argv.slice(2));
@@ -39,6 +40,9 @@ if (account_id === undefined) {
 const kinds_raw = positional[1] ?? "trade,transfer";
 const kinds = kinds_raw.split(",");
 const limit_raw = flags.get("--limit");
+// --- WHY --- the api caps a page of history at 200 rows, so a larger
+// limit is a 400 rather than a bigger page.
+const limit = check_limit(limit_raw, { min: 1, max: 200 });
 
 // --- WHY --- `fields` on /activity is a per-kind object, not a flat
 // list: each key is the field set for that kind, and a kind with no
@@ -63,7 +67,7 @@ const response = await api_intear_activity_query({
   token: flags.get("--token"),
   side: flags.get("--side") as never,
   min_usd: flags.get("--min-usd") as never,
-  limit: limit_raw !== undefined ? Number(limit_raw) : undefined,
+  limit,
   order: flags.get("--order") as never,
   cursor: flags.get("--cursor"),
 });

@@ -17,6 +17,7 @@
 import type { trade_requested_field } from "@sleet-js/intear-api-tool-box";
 import { api_intear_trades_query } from "../src";
 import { split_argv } from "./fun/split_argv";
+import { check_limit } from "./fun/check_limit";
 
 // --- argv ----------------------------------------------------------
 const { flags } = split_argv(process.argv.slice(2));
@@ -35,6 +36,9 @@ const fields = (flags.get("--fields")?.split(",") ?? [
   "trader",
 ]) as trade_requested_field[];
 const limit_raw = flags.get("--limit");
+// --- WHY --- the api caps a page of history at 200 rows, so a larger
+// limit is a 400 rather than a bigger page.
+const limit = check_limit(limit_raw, { min: 1, max: 200 });
 const after_millis = flags.get("--after-millis");
 const before_millis = flags.get("--before-millis");
 const token = flags.get("--token");
@@ -46,7 +50,7 @@ const response = await api_intear_trades_query({
   counterparty: flags.get("--counterparty"),
   trader: flags.get("--trader"),
   min_usd: flags.get("--min-usd") as never,
-  limit: limit_raw !== undefined ? Number(limit_raw) : undefined,
+  limit,
   order: flags.get("--order") as never,
   after_millis: after_millis !== undefined ? Number(after_millis) : undefined,
   before_millis:

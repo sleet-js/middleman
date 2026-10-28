@@ -3,9 +3,10 @@
 cli bins for the intear api, called through `middleman/intear`. the api
 is public and has no auth, so these bins need no base url.
 
-**one bin per one-shot endpoint — all 11 of them.** the api's websocket
-endpoints (`*.subscribe`) are intentionally not covered, since
-`middleman/intear/` is HTTP-only.
+**one bin per one-shot endpoint — 12 bins over 11 endpoints.** the api's
+websocket endpoints (`*.subscribe`) are intentionally not covered, since
+`middleman/intear/` is HTTP-only. `/tokens` gets two bins, one for each
+http method.
 
 all commands are run from the project root.
 
@@ -60,10 +61,13 @@ bun middleman-intear-api/bin/intear_trades_query.ts --min-usd 10000 --limit 5 --
 ## intear_transfers_query
 
 GET /transfers — token transfers. REQUIRES an account/sender/receiver.
+`--include-transactions` is a flag with no value: it adds transactions
+alongside the transfers.
 
 ```sh
 bun middleman-intear-api/bin/intear_transfers_query.ts sleet.near --limit 20
 bun middleman-intear-api/bin/intear_transfers_query.ts sleet.near --sender sleet.near --kind mint
+bun middleman-intear-api/bin/intear_transfers_query.ts sleet.near --include-transactions
 ```
 
 ## intear_activity_query

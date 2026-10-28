@@ -6,7 +6,7 @@
 //
 // argv:
 //   bun middleman-intear-api/bin/intear_tokens_get.ts [token_ids] [--fields a,b] [--limit n]
-//       [--sort field] [--desc] [--where key=value] [--account account.near]
+//       [--sort field] [--desc] [--where key=value]
 //
 // examples:
 //   bun middleman-intear-api/bin/intear_tokens_get.ts wrap.near
@@ -19,10 +19,7 @@ import type {
   token_requested_field,
   token_sort,
 } from "@sleet-js/intear-api-tool-box";
-import {
-  api_intear_token_fields,
-  api_intear_tokens_get,
-} from "../src";
+import { api_intear_token_fields, api_intear_tokens_get } from "../src";
 import { split_argv } from "./fun/split_argv";
 
 // --- FLAGS ---------------------------------------------------------
@@ -43,7 +40,7 @@ const { positional, flags, seen } = split_argv(process.argv.slice(2), {
 if (process.argv.length <= 2) {
   console.error(
     "usage: bun middleman-intear-api/bin/intear_tokens_get.ts [token_ids] [--fields a,b] [--limit n] " +
-      "[--sort field] [--desc] [--where key=value] [--account account.near]",
+      "[--sort field] [--desc] [--where key=value]",
   );
   process.exit(1);
 }
@@ -74,6 +71,15 @@ if (where_raw !== undefined) {
 const fields_raw = flags.get("--fields");
 const sort_field = flags.get("--sort");
 const limit_raw = flags.get("--limit");
+
+// --- WHY --- the api refuses a limit without a sort: a page of an
+// unsorted list is not a page of anything, so it answers "`limit` and
+// `offset` need a `sort`". checking it here gives a usage line
+// instead of a stack trace.
+if (limit_raw !== undefined && sort_field === undefined) {
+  console.error("--limit needs --sort, the api can only page a sorted list");
+  process.exit(1);
+}
 
 // --- WHY --- the tool box types fields as a string union, so a raw
 // --fields string is validated against the live schema instead of

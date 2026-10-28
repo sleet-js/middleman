@@ -15,6 +15,7 @@
 
 import { api_intear_holders_get } from "../src";
 import { split_argv } from "./fun/split_argv";
+import { check_limit } from "./fun/check_limit";
 
 // --- argv ----------------------------------------------------------
 const { positional, flags } = split_argv(process.argv.slice(2));
@@ -28,10 +29,13 @@ if (token_id === undefined) {
 }
 
 const limit_raw = flags.get("--limit");
+// --- WHY --- the api caps a holders page at 100 rows, so a larger
+// limit is a 400 rather than a bigger page.
+const limit = check_limit(limit_raw, { min: 1, max: 100 });
 
 const response = await api_intear_holders_get({
   token: token_id,
-  limit: limit_raw !== undefined ? Number(limit_raw) : undefined,
+  limit,
   cursor: flags.get("--cursor"),
 });
 
