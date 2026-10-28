@@ -19,7 +19,7 @@ import type {
   token_requested_field,
   token_sort,
 } from "@sleet-js/intear-api-tool-box";
-import { api_intear_token_fields, api_intear_tokens_post } from "../src";
+import { api_intear_tokens_post } from "../src";
 import { split_argv } from "./fun/split_argv";
 
 // --- FLAGS ---------------------------------------------------------
@@ -62,17 +62,8 @@ if (limit_raw !== undefined && sort_field === undefined) {
 // --- WHY --- `account_id` is not in the selectable field list on any
 // endpoint: it is always the row's leading column, returned whether
 // or not it is asked for. defaulting to it here would 400.
-const schema_fields = await api_intear_token_fields();
 const requested =
   fields_raw !== undefined ? fields_raw.split(",") : ["symbol", "price_usd"];
-for (const field of requested) {
-  if (!schema_fields.includes(field)) {
-    console.error(
-      `invalid --fields "${field}", expected one of ${schema_fields.slice(0, 12).join(", ")}, ...`,
-    );
-    process.exit(1);
-  }
-}
 
 const where: Record<string, string> = {};
 const where_raw = flags.get("--where");

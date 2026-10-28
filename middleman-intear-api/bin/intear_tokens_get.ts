@@ -19,7 +19,7 @@ import type {
   token_requested_field,
   token_sort,
 } from "@sleet-js/intear-api-tool-box";
-import { api_intear_token_fields, api_intear_tokens_get } from "../src";
+import { api_intear_tokens_get } from "../src";
 import { split_argv } from "./fun/split_argv";
 
 // --- FLAGS ---------------------------------------------------------
@@ -81,24 +81,11 @@ if (limit_raw !== undefined && sort_field === undefined) {
   process.exit(1);
 }
 
-// --- WHY --- the tool box types fields as a string union, so a raw
-// --fields string is validated against the live schema instead of
-// cast. asking the API for a field that does not exist would only
-// surface as a 400 from the server.
-const schema_fields = await api_intear_token_fields();
 // --- WHY --- `account_id` is not in the selectable field list on any
 // endpoint: it is always the row's leading column, returned whether
 // or not it is asked for. defaulting to it here would 400.
 const requested =
   fields_raw !== undefined ? fields_raw.split(",") : ["symbol", "price_usd"];
-for (const field of requested) {
-  if (!schema_fields.includes(field)) {
-    console.error(
-      `invalid --fields "${field}", expected one of ${schema_fields.slice(0, 12).join(", ")}, ...`,
-    );
-    process.exit(1);
-  }
-}
 
 const response = await api_intear_tokens_get({
   ids: token_ids.length > 0 ? token_ids : undefined,

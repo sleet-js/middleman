@@ -13,7 +13,7 @@
 // ========================================
 
 import type { token_requested_field } from "@sleet-js/intear-api-tool-box";
-import { api_intear_token_fields, api_intear_tokens_search } from "../src";
+import { api_intear_tokens_search } from "../src";
 import { split_argv } from "./fun/split_argv";
 import { check_limit } from "./fun/check_limit";
 
@@ -32,19 +32,10 @@ if (positional.length === 0) {
 
 const q = positional[0] ?? "";
 
-const schema_fields = await api_intear_token_fields();
 // --- WHY --- `account_id` is not in the selectable field list on any
 // endpoint: it is always the row's leading column, returned whether
 // or not it is asked for. defaulting to it here would 400.
 const requested = flags.get("--fields")?.split(",") ?? ["symbol", "price_usd"];
-for (const field of requested) {
-  if (!schema_fields.includes(field)) {
-    console.error(
-      `invalid --fields "${field}", expected one of ${schema_fields.slice(0, 12).join(", ")}, ...`,
-    );
-    process.exit(1);
-  }
-}
 
 const limit_raw = flags.get("--limit");
 // --- WHY --- the api caps tokens.search at 100 rows, so a larger
