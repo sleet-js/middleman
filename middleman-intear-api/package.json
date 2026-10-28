@@ -24,7 +24,8 @@
   "files": [
     "README.md",
     "LICENSE",
-    "dist/**/*"
+    "dist/**/*",
+    "bin/**/*"
   ],
   "scripts": {
     "typecheck": "tsc --noEmit",
