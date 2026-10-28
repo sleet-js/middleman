@@ -9,11 +9,6 @@
 // booleans are tracked by index rather than stored in the map, so a
 // bin reads `seen.has("--desc")` instead of guessing whether the map
 // holds "true" or an empty string.
-//
-// --- WHY --- the boolean flags are per-bin, not one global set. the
-// intear bins use --desc, the huggies bins use --include-hidden, and
-// a shared set would make one bin's flag swallow the next positional
-// in another bin's argv. the caller passes the ones it owns.
 // ========================================
 
 export interface SPLIT_ARGV_OPTIONS {
@@ -47,9 +42,6 @@ export function split_argv(
     if (boolean_flags.has(token)) continue;
 
     const value = argv[i + 1];
-    // --- WHY --- a trailing flag with no value is a typo far more
-    // often than a deliberate empty string, and a value-taking flag
-    // must never swallow the next positional.
     if (value === undefined || value.startsWith("--")) {
       console.error(`split_argv: ${token} was passed without a value`);
       process.exit(1);

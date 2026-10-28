@@ -31,9 +31,6 @@ if (token_id === undefined) {
   process.exit(1);
 }
 
-// --- WHY --- the range is checked here rather than cast: the tool box
-// types it as a narrow union, and an unchecked cast would let a typo
-// ("1y") reach the api as a silent 400 instead of a usage error.
 const RANGES: readonly trader_range[] = ["24h", "7d", "30d", "all"];
 const range_raw = positional[1] ?? "24h";
 if (!RANGES.includes(range_raw as trader_range)) {
@@ -44,8 +41,6 @@ if (!RANGES.includes(range_raw as trader_range)) {
 }
 const range = range_raw as trader_range;
 
-// --- WHY --- the api caps traders at 100 rows, so a larger top is a
-// 400 rather than a bigger list.
 const top = check_limit(flags.get("--top"), { min: 1, max: 100 }, "--top");
 
 const response = await api_intear_traders_get({

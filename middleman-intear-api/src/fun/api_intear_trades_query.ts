@@ -1,7 +1,7 @@
 // ========================================
 // API_INTEAR_TRADES_QUERY
 // GET /trades — every trade, filterable by token, side, counterparty
-// and minimum usd value. paginates with a cursor.
+// and minimum usd value.
 // ========================================
 
 import type {

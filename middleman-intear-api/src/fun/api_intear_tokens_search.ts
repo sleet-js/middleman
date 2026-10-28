@@ -1,7 +1,6 @@
 // ========================================
 // API_INTEAR_TOKENS_SEARCH
 // GET /tokens/search — fuzzy search over token names and symbols.
-// unlike /tokens this needs no `sort`, and takes a `q`.
 // ========================================
 
 import type {

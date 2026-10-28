@@ -50,18 +50,11 @@ const fields_raw = flags.get("--fields");
 const sort_field = flags.get("--sort");
 const limit_raw = flags.get("--limit");
 
-// --- WHY --- the api refuses a limit without a sort: a page of an
-// unsorted list is not a page of anything, so it answers "`limit` and
-// `offset` need a `sort`". checking it here gives a usage line
-// instead of a stack trace.
 if (limit_raw !== undefined && sort_field === undefined) {
   console.error("--limit needs --sort, the api can only page a sorted list");
   process.exit(1);
 }
 
-// --- WHY --- `account_id` is not in the selectable field list on any
-// endpoint: it is always the row's leading column, returned whether
-// or not it is asked for. defaulting to it here would 400.
 const requested =
   fields_raw !== undefined ? fields_raw.split(",") : ["symbol", "price_usd"];
 

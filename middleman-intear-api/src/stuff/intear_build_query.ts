@@ -18,12 +18,6 @@ function is_record_fun(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
-// --- WHY --- the three special cases below are not conveniences, they
-// are workarounds for how intear parses the query string:
-//   * `where` keys are unprefixed at the top level, not `where.x`.
-//   * a list is comma separated, not repeated (`fields=a&fields=b`).
-//   * sort.desc must become the `-field` form; url-encoded booleans
-//     arrive as the string "true", which the server rejects.
 export function intear_build_query(params: Record<string, unknown>): string {
   const parts: string[] = [];
 

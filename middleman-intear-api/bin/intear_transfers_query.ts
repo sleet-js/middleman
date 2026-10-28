@@ -27,10 +27,6 @@ const { positional, flags, seen } = split_argv(process.argv.slice(2), {
   boolean_flags: BOOLEAN_FLAGS,
 });
 
-// --- WHY --- the api rejects a transfer query with no party: an
-// unfiltered history is unbounded, so it answers
-// "history needs a `sender`, `receiver` or `account`". requiring the
-// positional here fails with a usage line instead of a 400.
 const account_id = positional[0];
 if (account_id === undefined) {
   console.error(
@@ -51,8 +47,6 @@ const fields = (flags.get("--fields")?.split(",") ?? [
   "kind",
 ]) as transfer_requested_field[];
 const limit_raw = flags.get("--limit");
-// --- WHY --- the api caps a page of history at 200 rows, so a larger
-// limit is a 400 rather than a bigger page.
 const limit = check_limit(limit_raw, { min: 1, max: 200 });
 const after_millis = flags.get("--after-millis");
 const before_millis = flags.get("--before-millis");

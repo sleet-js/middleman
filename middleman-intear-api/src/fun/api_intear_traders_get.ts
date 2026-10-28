@@ -1,7 +1,6 @@
 // ========================================
 // API_INTEAR_TRADERS_GET
-// GET /traders — a token's top traders by profit over a time range,
-// highest `pnl_usd` first.
+// GET /traders — a token's top traders by profit over a time range.
 // ========================================
 
 import type {

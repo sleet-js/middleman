@@ -32,14 +32,9 @@ if (positional.length === 0) {
 
 const q = positional[0] ?? "";
 
-// --- WHY --- `account_id` is not in the selectable field list on any
-// endpoint: it is always the row's leading column, returned whether
-// or not it is asked for. defaulting to it here would 400.
 const requested = flags.get("--fields")?.split(",") ?? ["symbol", "price_usd"];
 
 const limit_raw = flags.get("--limit");
-// --- WHY --- the api caps tokens.search at 100 rows, so a larger
-// limit is a 400 rather than a bigger page.
 const limit = check_limit(limit_raw, { min: 1, max: 100 });
 
 const response = await api_intear_tokens_search({

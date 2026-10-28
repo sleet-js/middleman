@@ -1,7 +1,6 @@
 // ========================================
 // API_INTEAR_ACCOUNTS_SEARCH
-// GET /accounts/search — accounts whose id starts with `prefix`,
-// newest activity first. used by an account picker.
+// GET /accounts/search — accounts whose id starts with `prefix`.
 // ========================================
 
 import type {

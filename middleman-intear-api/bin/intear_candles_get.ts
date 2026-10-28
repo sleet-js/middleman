@@ -41,10 +41,6 @@ const count_back = flags.get("--count-back");
 const to_millis = flags.get("--to-millis");
 
 // --- params --------------------------------------------------------
-// --- WHY --- these are validated rather than cast: the tool box types
-// the fields as narrow string unions, and an unchecked cast would let
-// a typo ("highs") reach the API as a silent 400 instead of a usage
-// error here.
 const CANDLE_SERIES_FIELDS = [
   "open",
   "high",
@@ -83,8 +79,6 @@ console.log(
     `${Object.keys(response.tokens).length}/${token_ids.length} token(s) returned`,
 );
 for (const [token, data] of Object.entries(response.tokens)) {
-  // `time` is the x-axis shared by every series, so it is the point
-  // count — not any single usd/near field, which is optional.
   console.log(` ${token}: ${data.time.length} point(s)`);
 }
 if (response.missing.length > 0) {

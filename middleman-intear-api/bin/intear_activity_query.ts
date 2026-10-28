@@ -40,14 +40,8 @@ if (account_id === undefined) {
 const kinds_raw = positional[1] ?? "trade,transfer";
 const kinds = kinds_raw.split(",");
 const limit_raw = flags.get("--limit");
-// --- WHY --- the api caps a page of history at 200 rows, so a larger
-// limit is a 400 rather than a bigger page.
 const limit = check_limit(limit_raw, { min: 1, max: 200 });
 
-// --- WHY --- `fields` on /activity is a per-kind object, not a flat
-// list: each key is the field set for that kind, and a kind with no
-// key returns no rows at all. a single `--fields` string is therefore
-// fanned out across the requested kinds.
 const requested = flags.get("--fields")?.split(",");
 const fields: activity_fields = {};
 for (const kind of kinds) {

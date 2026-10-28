@@ -28,8 +28,6 @@ if (account_id === undefined) {
 }
 
 const limit_raw = flags.get("--limit");
-// --- WHY --- the api caps positions at 1000 rows, so a larger limit
-// is a 400 rather than a bigger page.
 const limit = check_limit(limit_raw, { min: 1, max: 1000 });
 
 const response = await api_intear_positions_get({

@@ -14,9 +14,6 @@ import { api_intear_get } from "./api_intear_get";
 export async function api_intear_prices_at_get(
   params: prices_at_params,
 ): Promise<prices_at_response> {
-  // --- WHY --- this endpoint does not take a normal params object:
-  // the server wants one `at=<token>:<timestamp_millis>` value with
-  // the pairs comma separated, not `queries[0][token]=…`.
   const at = params.queries
     .map(
       (query) => `${encodeURIComponent(query.token)}:${query.timestamp_millis}`,

@@ -1,7 +1,7 @@
 // ========================================
 // API_INTEAR_ACTIVITY_QUERY
 // GET /activity — trades and transfers of one account in a single
-// feed, so the UI does not have to merge two endpoints itself.
+// feed.
 // ========================================
 
 import type {

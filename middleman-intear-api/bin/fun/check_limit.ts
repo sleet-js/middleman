@@ -10,10 +10,6 @@
 //   accounts.search 1..50
 //   trades/transfers 1..200
 //   positions      1..1000
-//
-// WHY a helper and not a check in each bin: the same eight bins ask
-// for a limit, and they must agree on the range or the same number
-// would be fine in one bin and a 400 in the next.
 // ========================================
 
 export interface CHECK_LIMIT_RANGE {

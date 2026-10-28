@@ -3,21 +3,6 @@
 // POST /tokens — the same endpoint as api_intear_tokens_get, with the
 // params in a JSON body instead of the query string.
 // ========================================
-//
-// --- WHY --- a GET puts the params in the url, and the api refuses a
-// url over about 8KB with a 414. a list of token ids is the worst
-// case, because a near account id is 64 hex characters and a token id
-// adds a label on top:
-//   wrap.near                                9 chars
-//   token.rhealab.near                       18 chars
-//   dac17f958....factory.bridge.near         60 chars
-//   17208628f84f5d6ad...e36133a1            64 chars
-// so only about 170 ids fit in one GET.
-//
-// a POST body has a 64KB limit — the same limit as a websocket
-// message — which fits about 2,000 ids. the whole visible token list
-// therefore arrives in ONE request instead of several.
-// ========================================
 
 import type {
   token_requested_field,

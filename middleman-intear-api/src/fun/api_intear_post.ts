@@ -4,19 +4,6 @@
 // through. the twin of api_intear_get.ts, for the endpoints whose
 // params do not fit in a url.
 // ========================================
-//
-// flow:
-//   1. build url = INTEAR_BASE_URL + path
-//   2. fetch POST with the params as a JSON body
-//   3. on non-2xx: intear_parse_error logs and throws
-//   4. on 2xx:    parse json, log the framed success block, return it
-//
-// `label` is the human-readable name in the success log block (e.g.
-// "INTEAR TOKENS POST"). `fallback` is the prefix on the thrown error.
-// nothing is redacted — these responses are public market data, so the
-// full body is logged as-is.
-//
-// ========================================
 
 import { INTEAR_BASE_URL } from "../stuff/intear_base_url";
 import { intear_parse_error } from "../stuff/intear_parse_error";
@@ -62,7 +49,6 @@ export async function api_intear_post<t = unknown>({
   }
 
   const json = (await response.json()) as t;
-  // framed success log, same shape as every other intear call.
   console.log("=============================");
   console.log(` ${label} via POST on:`, url);
   console.log(

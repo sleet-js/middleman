@@ -7,14 +7,6 @@
 import type { api_schema } from "@sleet-js/intear-api-tool-box";
 import { api_intear_get } from "./api_intear_get";
 
-// --- WHY --- the tool box types token_field as a string union, but a
-// bin taking --fields from argv has a plain string. rather than
-// casting it and letting the API 400, check it here so the user gets
-// the list of valid names.
-//
-// the schema shape lives in @sleet-js/intear-api-tool-box (api_schema),
-// so we import it from there instead of re-declaring a narrower
-// ad-hoc type here.
 export async function api_intear_token_fields(): Promise<string[]> {
   const schema = await api_intear_get<api_schema>({
     key: "api_intear_schema",

@@ -42,9 +42,6 @@ const timestamp_millis =
     ? Number(timestamp_raw)
     : Date.now() - ONE_HOUR_MS;
 
-// --- WHY --- `--also` exists because this endpoint caps at 100
-// queries and its wire format is a single `at=` list. splitting
-// extra queries into that list is the whole point of the flag.
 const queries = [{ token: token_id, timestamp_millis }];
 for (const extra of (flags.get("--also") ?? "")
   .split(",")
@@ -65,8 +62,6 @@ for (const extra of (flags.get("--also") ?? "")
 const response = await api_intear_prices_at_get({ queries });
 
 // --- summary -------------------------------------------------------
-// --- WHY --- prices come back positionally in query order, so the
-// token list has to be walked alongside the prices array.
 console.log(
   "PRICES",
   `${response.prices.length} price(s) at height ${response.height}`,

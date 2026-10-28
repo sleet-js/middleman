@@ -32,11 +32,6 @@ const { positional, flags, seen } = split_argv(process.argv.slice(2), {
   boolean_flags: BOOLEAN_FLAGS,
 });
 
-// --- WHY --- nothing here is required: omitting the token ids and
-// every filter is a valid "give me the top tokens by volume" call, so
-// this bin never exits on missing args. it only prints usage when it
-// is handed no arguments at all, which is far more likely to be a
-// mistaken invocation than a deliberate "call with defaults".
 if (process.argv.length <= 2) {
   console.error(
     "usage: bun middleman-intear-api/bin/intear_tokens_get.ts [token_ids] [--fields a,b] [--limit n] " +
@@ -52,9 +47,6 @@ const token_ids =
     : token_ids_raw.split(",").filter((id) => id !== "");
 
 // --- params --------------------------------------------------------
-// --- WHY --- `where` takes one key=value here rather than a json blob:
-// it maps straight onto the query string (where keys are unprefixed),
-// so `min_reputation=NotFake` needs no json at all.
 const where: Record<string, string> = {};
 const where_raw = flags.get("--where");
 if (where_raw !== undefined) {
@@ -72,18 +64,11 @@ const fields_raw = flags.get("--fields");
 const sort_field = flags.get("--sort");
 const limit_raw = flags.get("--limit");
 
-// --- WHY --- the api refuses a limit without a sort: a page of an
-// unsorted list is not a page of anything, so it answers "`limit` and
-// `offset` need a `sort`". checking it here gives a usage line
-// instead of a stack trace.
 if (limit_raw !== undefined && sort_field === undefined) {
   console.error("--limit needs --sort, the api can only page a sorted list");
   process.exit(1);
 }
 
-// --- WHY --- `account_id` is not in the selectable field list on any
-// endpoint: it is always the row's leading column, returned whether
-// or not it is asked for. defaulting to it here would 400.
 const requested =
   fields_raw !== undefined ? fields_raw.split(",") : ["symbol", "price_usd"];
 

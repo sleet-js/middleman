@@ -29,9 +29,6 @@ if (account_id === undefined) {
   process.exit(1);
 }
 
-// --- WHY --- `sources` has no server-side default in the tool box
-// types, so default to all three here rather than making every
-// invocation remember the list.
 const sources_raw = positional[1] ?? "direct,native,rhea";
 const sources = sources_raw.split(",") as ("direct" | "native" | "rhea")[];
 const tokens = flags.get("--tokens")?.split(",");
@@ -52,9 +49,6 @@ console.log(
 for (const row of response.balances.rows) {
   console.log(" ", row.join("  |  "));
 }
-// --- WHY --- errors are per-source, not a failed request: the call
-// succeeded for the sources that answered, so print them instead of
-// hiding the result.
 for (const [source, error] of Object.entries(response.errors ?? {})) {
   console.log(` ${source} failed:`, error);
 }

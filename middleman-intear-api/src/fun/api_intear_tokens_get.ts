@@ -1,7 +1,6 @@
 // ========================================
 // API_INTEAR_TOKENS_GET
-// GET /tokens — token rows. `fields` narrows the returned row type,
-// so passing `["symbol","price_usd"]` types the row accordingly.
+// GET /tokens — token rows. `fields` narrows the returned row type.
 // ========================================
 
 import type {

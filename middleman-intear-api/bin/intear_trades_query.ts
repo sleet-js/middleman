@@ -22,10 +22,6 @@ import { check_limit } from "./fun/check_limit";
 // --- argv ----------------------------------------------------------
 const { flags } = split_argv(process.argv.slice(2));
 
-// --- WHY --- /trades has no `symbol` or `price_usd` column: a trade
-// is a swap, so it reports token_in/amount_in against
-// token_out/amount_out plus a usd_value for the leg. these defaults
-// are the fields a feed row can actually render.
 const fields = (flags.get("--fields")?.split(",") ?? [
   "token_in",
   "amount_in",
@@ -36,8 +32,6 @@ const fields = (flags.get("--fields")?.split(",") ?? [
   "trader",
 ]) as trade_requested_field[];
 const limit_raw = flags.get("--limit");
-// --- WHY --- the api caps a page of history at 200 rows, so a larger
-// limit is a 400 rather than a bigger page.
 const limit = check_limit(limit_raw, { min: 1, max: 200 });
 const after_millis = flags.get("--after-millis");
 const before_millis = flags.get("--before-millis");

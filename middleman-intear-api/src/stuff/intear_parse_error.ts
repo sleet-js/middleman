@@ -1,8 +1,7 @@
 // ========================================
 // INTEAR_PARSE_ERROR
 // turn a non-2xx intear response into a thrown Error. intear answers
-// failures with `{ "error": { "code", "message" } }`, so the code and
-// message are pulled out and put on the error itself.
+// failures with `{ "error": { "code", "message" } }`.
 // ========================================
 
 const is_record = (value: unknown): value is Record<string, unknown> =>
@@ -22,7 +21,7 @@ export async function intear_parse_error(
   try {
     parsed = text.length > 0 ? JSON.parse(text) : null;
   } catch {
-    // body was not json — the status line is all we have.
+    parsed = null;
   }
 
   const raw_error = is_record(parsed) ? parsed["error"] : undefined;

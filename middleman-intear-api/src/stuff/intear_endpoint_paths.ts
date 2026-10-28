@@ -2,10 +2,6 @@
 // INTEAR_ENDPOINT_PATHS
 // the path for every one-shot endpoint this middleman calls. one key
 // per endpoint so the path is written down exactly once.
-//
-// only GET / one-shot endpoints live here — no websocket, no
-// subscriptions. `api_intear_*` wrappers pick a key and a params
-// object; `api_intear_get` does the rest.
 // ========================================
 
 export const INTEAR_ENDPOINT_PATHS = {

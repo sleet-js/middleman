@@ -1,7 +1,7 @@
 // ========================================
 // API_INTEAR_TRANSFERS_QUERY
 // GET /transfers — token transfers, filterable by sender, receiver,
-// account, kind or token. paginates with a cursor.
+// account, kind or token.
 // ========================================
 
 import type {
