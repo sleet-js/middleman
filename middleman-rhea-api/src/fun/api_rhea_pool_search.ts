@@ -4,11 +4,15 @@
 // ========================================
 
 import { api_rhea_get } from "./api_rhea_get";
-import type { RHEA_POOL_SEARCH_RESPONSE } from "../types/rhea_pool";
+import type {
+  RHEA_POOL_SEARCH_RESPONSE,
+  RHEA_POOL_SEARCH_TYPE,
+  RHEA_POOL_SORT,
+} from "../types/rhea_pool";
 
 export interface API_RHEA_POOL_SEARCH_PARAMS {
-  type?: string;
-  sort?: string;
+  type?: RHEA_POOL_SEARCH_TYPE;
+  sort?: RHEA_POOL_SORT | string;
   limit?: number | string;
   offset?: number | string;
   farm?: string | boolean;
