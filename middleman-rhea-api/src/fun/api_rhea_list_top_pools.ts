@@ -3,7 +3,7 @@
 // GET /list-top-pools — top pools by tvl.
 // ========================================
 
-import { api_rhea_get } from "./api_rhea_get";
+import { api_rhea_get } from "../stuff/api_rhea_get";
 import type { RHEA_POOL_LIST_RESPONSE } from "../types/rhea_pool";
 
 export async function api_rhea_list_top_pools(): Promise<RHEA_POOL_LIST_RESPONSE> {

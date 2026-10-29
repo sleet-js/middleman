@@ -7,7 +7,7 @@ import type {
   candles_get_params,
   candles_response,
 } from "@sleet-js/intear-api-tool-box";
-import { api_intear_get } from "./api_intear_get";
+import { api_intear_get } from "../stuff/api_intear_get";
 
 export async function api_intear_candles_get(
   params: candles_get_params,

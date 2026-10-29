@@ -9,7 +9,7 @@ import type {
   tokens_get_params,
   tokens_get_response,
 } from "@sleet-js/intear-api-tool-box";
-import { api_intear_post } from "./api_intear_post";
+import { api_intear_post } from "../stuff/api_intear_post";
 
 export async function api_intear_tokens_post<
   f extends readonly token_requested_field[],

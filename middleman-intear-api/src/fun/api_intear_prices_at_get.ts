@@ -9,7 +9,7 @@ import type {
   prices_at_params,
   prices_at_response,
 } from "@sleet-js/intear-api-tool-box";
-import { api_intear_get } from "./api_intear_get";
+import { api_intear_get } from "../stuff/api_intear_get";
 
 export async function api_intear_prices_at_get(
   params: prices_at_params,

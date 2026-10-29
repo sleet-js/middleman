@@ -7,7 +7,7 @@ import type {
   holders_get_params,
   holders_get_response,
 } from "@sleet-js/intear-api-tool-box";
-import { api_intear_get } from "./api_intear_get";
+import { api_intear_get } from "../stuff/api_intear_get";
 
 export async function api_intear_holders_get(
   params: holders_get_params,

@@ -3,7 +3,7 @@
 // GET /list-token-price-by-ids?ids=... — prices for given token ids.
 // ========================================
 
-import { api_rhea_get } from "./api_rhea_get";
+import { api_rhea_get } from "../stuff/api_rhea_get";
 import type { RHEA_TOKEN_PRICE_MAP } from "../types/rhea_token";
 
 export interface API_RHEA_LIST_TOKEN_PRICE_BY_IDS_PARAMS {

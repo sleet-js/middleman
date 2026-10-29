@@ -7,7 +7,7 @@
 // "Failed to deserialize query string: missing field `accountId`".
 // ========================================
 
-import { api_intear_dex_get } from "./api_intear_dex_get";
+import { api_intear_dex_get } from "../stuff/api_intear_dex_get";
 import type { INTEAR_DEX_BALANCES_RESPONSE } from "../types/intear_dex";
 
 export interface API_INTEAR_DEX_BALANCES_PARAMS {

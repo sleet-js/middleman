@@ -3,7 +3,7 @@
 // GET /get-service-version — indexer version string.
 // ========================================
 
-import { api_rhea_get } from "./api_rhea_get";
+import { api_rhea_get } from "../stuff/api_rhea_get";
 
 export async function api_rhea_get_service_version(): Promise<string> {
   return api_rhea_get<string>({

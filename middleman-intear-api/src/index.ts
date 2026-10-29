@@ -9,8 +9,8 @@
 // call logs a framed block, same as the graupelos middleman.
 // ========================================
 
-export * from "./fun/api_intear_get";
-export * from "./fun/api_intear_post";
+export * from "./stuff/api_intear_get";
+export * from "./stuff/api_intear_post";
 export * from "./fun/api_intear_tokens_get";
 export * from "./fun/api_intear_tokens_post";
 export * from "./fun/api_intear_tokens_search";

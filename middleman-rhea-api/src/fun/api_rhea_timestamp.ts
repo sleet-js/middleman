@@ -3,7 +3,7 @@
 // GET /timestamp — indexer timestamp.
 // ========================================
 
-import { api_rhea_get } from "./api_rhea_get";
+import { api_rhea_get } from "../stuff/api_rhea_get";
 import type { RHEA_TIMESTAMP_RESPONSE } from "../types/rhea_pool";
 
 export async function api_rhea_timestamp(): Promise<RHEA_TIMESTAMP_RESPONSE> {

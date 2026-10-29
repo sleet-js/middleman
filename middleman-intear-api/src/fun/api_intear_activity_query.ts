@@ -8,7 +8,7 @@ import type {
   activity_query_params,
   activity_response,
 } from "@sleet-js/intear-api-tool-box";
-import { api_intear_get } from "./api_intear_get";
+import { api_intear_get } from "../stuff/api_intear_get";
 
 export async function api_intear_activity_query(
   params: activity_query_params,

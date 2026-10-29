@@ -9,7 +9,7 @@ import type {
   transfers_query_params,
   transfers_query_response,
 } from "@sleet-js/intear-api-tool-box";
-import { api_intear_get } from "./api_intear_get";
+import { api_intear_get } from "../stuff/api_intear_get";
 
 export async function api_intear_transfers_query<
   f extends readonly transfer_requested_field[],

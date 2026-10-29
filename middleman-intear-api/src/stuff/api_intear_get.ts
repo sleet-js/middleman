@@ -1,38 +1,38 @@
 // ========================================
-// API_INTEAR_POST
-// the one POST helper every `fun/api_intear_*_post` wrapper goes
-// through. the twin of api_intear_get.ts, for the endpoints whose
-// params do not fit in a url.
+// API_INTEAR_GET
+// the single fetch+log+error helper every `fun/api_intear_*` wrapper
+// goes through. it lives in stuff/ next to the other shared plumbing.
 // ========================================
 
-import { INTEAR_BASE_URL } from "../stuff/intear_base_url";
-import { intear_parse_error } from "../stuff/intear_parse_error";
-import type { INTEAR_ENDPOINT_KEY } from "../stuff/intear_endpoint_paths";
-import { INTEAR_ENDPOINT_PATHS } from "../stuff/intear_endpoint_paths";
+import { INTEAR_BASE_URL } from "./intear_base_url";
+import { intear_build_query } from "./intear_build_query";
+import { intear_parse_error } from "./intear_parse_error";
+import type { INTEAR_ENDPOINT_KEY } from "./intear_endpoint_paths";
+import { INTEAR_ENDPOINT_PATHS } from "./intear_endpoint_paths";
 
-export interface API_INTEAR_POST_PARAMS {
+export interface API_INTEAR_GET_PARAMS {
   key: INTEAR_ENDPOINT_KEY;
   params?: object;
   label: string;
   fallback: string;
 }
 
-export async function api_intear_post<t = unknown>({
+export async function api_intear_get<t = unknown>({
   key,
   params = {},
   label,
   fallback,
-}: API_INTEAR_POST_PARAMS): Promise<t> {
+}: API_INTEAR_GET_PARAMS): Promise<t> {
   const path = INTEAR_ENDPOINT_PATHS[key];
-  const url = `${INTEAR_BASE_URL}${path}`;
+  const query = intear_build_query(params as Record<string, unknown>);
+  const url =
+    query.length > 0
+      ? `${INTEAR_BASE_URL}${path}?${query}`
+      : `${INTEAR_BASE_URL}${path}`;
 
   const response = await fetch(url, {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(params),
+    method: "GET",
+    headers: { Accept: "application/json" },
   });
 
   if (!response.ok) {
@@ -50,7 +50,7 @@ export async function api_intear_post<t = unknown>({
 
   const json = (await response.json()) as t;
   console.log("=============================");
-  console.log(` ${label} via POST on:`, url);
+  console.log(` ${label} via GET on:`, url);
   console.log(
     "RESPONSE STATUS:",
     `${response.status} - ${response.statusText}`,

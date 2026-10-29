@@ -8,7 +8,7 @@ import type {
   balances_get_response,
   token_requested_field,
 } from "@sleet-js/intear-api-tool-box";
-import { api_intear_get } from "./api_intear_get";
+import { api_intear_get } from "../stuff/api_intear_get";
 
 export async function api_intear_balances_get<
   f extends readonly token_requested_field[] = readonly token_requested_field[],

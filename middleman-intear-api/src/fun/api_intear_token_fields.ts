@@ -5,7 +5,7 @@
 // ========================================
 
 import type { api_schema } from "@sleet-js/intear-api-tool-box";
-import { api_intear_get } from "./api_intear_get";
+import { api_intear_get } from "../stuff/api_intear_get";
 
 export async function api_intear_token_fields(): Promise<string[]> {
   const schema = await api_intear_get<api_schema>({

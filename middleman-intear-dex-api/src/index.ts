@@ -13,7 +13,7 @@
 // logs a framed block, same as the other middlemen.
 // ========================================
 
-export * from "./fun/api_intear_dex_get";
+export * from "./stuff/api_intear_dex_get";
 export * from "./fun/api_intear_dex_pools_all";
 export * from "./fun/api_intear_dex_stats_tvl_total";
 export * from "./fun/api_intear_dex_stats_volume_total";

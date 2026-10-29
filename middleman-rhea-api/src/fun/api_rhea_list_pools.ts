@@ -3,7 +3,7 @@
 // GET /list-pools — paginated/filtered pool list. params pass through.
 // ========================================
 
-import { api_rhea_get } from "./api_rhea_get";
+import { api_rhea_get } from "../stuff/api_rhea_get";
 import type { RHEA_POOL_LIST_RESPONSE } from "../types/rhea_pool";
 
 export interface API_RHEA_LIST_POOLS_PARAMS {

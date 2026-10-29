@@ -6,7 +6,7 @@
 // anything else with "Invalid period. Expected day|week|month|year|total".
 // ========================================
 
-import { api_intear_dex_get } from "./api_intear_dex_get";
+import { api_intear_dex_get } from "../stuff/api_intear_dex_get";
 import type { INTEAR_DEX_TVL_RESPONSE } from "../types/intear_dex";
 import type { INTEAR_DEX_PERIOD } from "../stuff/intear_dex_endpoint_paths";
 

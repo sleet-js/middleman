@@ -7,7 +7,7 @@ import type {
   positions_get_params,
   positions_response,
 } from "@sleet-js/intear-api-tool-box";
-import { api_intear_get } from "./api_intear_get";
+import { api_intear_get } from "../stuff/api_intear_get";
 
 export async function api_intear_positions_get(
   params: positions_get_params,

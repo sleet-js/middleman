@@ -3,7 +3,7 @@
 // GET /list-token-v2 — lighter token metadata map (no icon).
 // ========================================
 
-import { api_rhea_get } from "./api_rhea_get";
+import { api_rhea_get } from "../stuff/api_rhea_get";
 import type { RHEA_TOKEN_MAP } from "../types/rhea_token";
 
 export async function api_rhea_list_token_v2(): Promise<RHEA_TOKEN_MAP> {

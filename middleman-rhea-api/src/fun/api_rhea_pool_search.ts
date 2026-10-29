@@ -3,7 +3,7 @@
 // GET /pool/search — search pools. params pass through.
 // ========================================
 
-import { api_rhea_get } from "./api_rhea_get";
+import { api_rhea_get } from "../stuff/api_rhea_get";
 import type {
   RHEA_POOL_SEARCH_RESPONSE,
   RHEA_POOL_SEARCH_TYPE,

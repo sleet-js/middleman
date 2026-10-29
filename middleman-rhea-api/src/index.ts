@@ -5,7 +5,7 @@
 // src/types/ since there is no rhea tool-box package.
 // ========================================
 
-export * from "./fun/api_rhea_get";
+export * from "./stuff/api_rhea_get";
 export * from "./fun/api_rhea_fetch_all_pools";
 export * from "./fun/api_rhea_list_token";
 export * from "./fun/api_rhea_list_token_v2";

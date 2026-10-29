@@ -1,21 +1,22 @@
 // ========================================
 // API_INTEAR_DEX_GET
 // the single fetch+log+error helper every `fun/api_intear_dex_*`
-// wrapper goes through.
+// wrapper goes through. it lives in stuff/ next to the other shared
+// plumbing.
 //
 // the api is GET only — POST/PUT/DELETE/PATCH all answer 405 — and it
 // needs no auth. it does send `access-control-allow-origin: *`, so a
 // browser can call it cross origin as well.
 // ========================================
 
-import { INTEAR_DEX_BASE_URL } from "../stuff/intear_dex_base_url";
-import { intear_dex_build_query } from "../stuff/intear_dex_build_query";
-import { intear_dex_parse_error } from "../stuff/intear_dex_parse_error";
+import { INTEAR_DEX_BASE_URL } from "./intear_dex_base_url";
+import { intear_dex_build_query } from "./intear_dex_build_query";
+import { intear_dex_parse_error } from "./intear_dex_parse_error";
 import type {
   INTEAR_DEX_ENDPOINT_KEY,
   INTEAR_DEX_PERIOD,
-} from "../stuff/intear_dex_endpoint_paths";
-import { INTEAR_DEX_ENDPOINT_PATHS } from "../stuff/intear_dex_endpoint_paths";
+} from "./intear_dex_endpoint_paths";
+import { INTEAR_DEX_ENDPOINT_PATHS } from "./intear_dex_endpoint_paths";
 
 export interface API_INTEAR_DEX_GET_PARAMS {
   key: INTEAR_DEX_ENDPOINT_KEY;

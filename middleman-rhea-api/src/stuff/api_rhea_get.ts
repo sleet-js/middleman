@@ -1,14 +1,14 @@
 // ========================================
 // API_RHEA_GET
 // the single fetch+log+error helper every `fun/api_rhea_*` wrapper
-// goes through.
+// goes through. it lives in stuff/ next to the other shared plumbing.
 // ========================================
 
-import { RHEA_BASE_URL } from "../stuff/rhea_base_url";
-import { rhea_build_query } from "../stuff/rhea_build_query";
-import { rhea_parse_error } from "../stuff/rhea_parse_error";
-import type { RHEA_ENDPOINT_KEY } from "../stuff/rhea_endpoint_paths";
-import { RHEA_ENDPOINT_PATHS } from "../stuff/rhea_endpoint_paths";
+import { RHEA_BASE_URL } from "./rhea_base_url";
+import { rhea_build_query } from "./rhea_build_query";
+import { rhea_parse_error } from "./rhea_parse_error";
+import type { RHEA_ENDPOINT_KEY } from "./rhea_endpoint_paths";
+import { RHEA_ENDPOINT_PATHS } from "./rhea_endpoint_paths";
 
 export interface API_RHEA_GET_PARAMS {
   key: RHEA_ENDPOINT_KEY;

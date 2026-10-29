@@ -6,7 +6,7 @@
 // given it narrows the `account` field to that account.
 // ========================================
 
-import { api_intear_dex_get } from "./api_intear_dex_get";
+import { api_intear_dex_get } from "../stuff/api_intear_dex_get";
 import type { INTEAR_DEX_TEAR_STAKING_RESPONSE } from "../types/intear_dex";
 
 export interface API_INTEAR_DEX_TEAR_STAKING_PARAMS {

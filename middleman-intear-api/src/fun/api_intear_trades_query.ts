@@ -9,7 +9,7 @@ import type {
   trades_query_params,
   trades_query_response,
 } from "@sleet-js/intear-api-tool-box";
-import { api_intear_get } from "./api_intear_get";
+import { api_intear_get } from "../stuff/api_intear_get";
 
 export async function api_intear_trades_query<
   f extends readonly trade_requested_field[],

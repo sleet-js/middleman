@@ -7,7 +7,7 @@ import type {
   accounts_search_params,
   accounts_search_response,
 } from "@sleet-js/intear-api-tool-box";
-import { api_intear_get } from "./api_intear_get";
+import { api_intear_get } from "../stuff/api_intear_get";
 
 export async function api_intear_accounts_search(
   params: accounts_search_params,

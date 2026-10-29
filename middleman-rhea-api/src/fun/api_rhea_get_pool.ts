@@ -3,7 +3,7 @@
 // GET /get-pool?pool_id=... — single pool.
 // ========================================
 
-import { api_rhea_get } from "./api_rhea_get";
+import { api_rhea_get } from "../stuff/api_rhea_get";
 import type { RHEA_POOL } from "../types/rhea_pool";
 
 export interface API_RHEA_GET_POOL_PARAMS {

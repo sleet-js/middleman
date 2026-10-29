@@ -8,7 +8,7 @@ import type {
   tokens_search_params,
   tokens_search_response,
 } from "@sleet-js/intear-api-tool-box";
-import { api_intear_get } from "./api_intear_get";
+import { api_intear_get } from "../stuff/api_intear_get";
 
 export async function api_intear_tokens_search<
   f extends readonly token_requested_field[],
