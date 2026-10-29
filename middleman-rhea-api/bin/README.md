@@ -76,6 +76,10 @@ GET /pool/search — search pools by type (classic, dcl, all, stable, degen, hot
 ```sh
 bun middleman-rhea-api/bin/rhea_pool_search.ts --type dcl --sort tvl --limit 20
 bun middleman-rhea-api/bin/rhea_pool_search.ts --type all --sort 24h --limit 20
+# search pools containing a token (substring match on symbol/id)
+bun middleman-rhea-api/bin/rhea_pool_search.ts --type all --sort tvl --limit 20 --token-list mbga
+# fetch specific pools by id
+bun middleman-rhea-api/bin/rhea_pool_search.ts --pool-id-list 0,1,2
 ```
 
 ## rhea_timestamp
