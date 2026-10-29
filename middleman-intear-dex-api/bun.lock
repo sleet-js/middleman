@@ -6,6 +6,7 @@
       "name": "@sleet-js/middleman-intear-dex-api",
       "devDependencies": {
         "@types/bun": "latest",
+        "typescript": "^7.0.2",
       },
       "peerDependencies": {
         "typescript": "^7",
