@@ -7,7 +7,7 @@ clean ts library for interacting with different APIs
 
 - ✅ middleman-intear-api
 - 👀 middleman-intear-dex-api
-- 👀 middleman-rhea-api
+- ✅ middleman-rhea-api
 
 =====================
 <br/>
