@@ -67,5 +67,18 @@ export const RHEA_ENDPOINT_PATHS = {
 } as const;
 
 export type RHEA_ENDPOINT_KEY = keyof typeof RHEA_ENDPOINT_PATHS;
+
+// ========================================
+// RHEA_APIDATA_BASE_URL
+// separate host for pool tvl/volume history.
+// ========================================
+export const RHEA_APIDATA_BASE_URL = "https://apidata.rhea.finance";
+
+export const RHEA_APIDATA_ENDPOINT_PATHS = {
+  rhea_apidata_pool_tvl: "/api/pool/{id}/tvl",
+  rhea_apidata_pool_volume: "/api/pool/{id}/volume",
+} as const;
+
+export type RHEA_APIDATA_ENDPOINT_KEY = keyof typeof RHEA_APIDATA_ENDPOINT_PATHS;
 // ========================================
 // copyright 2026 by sleet.near
