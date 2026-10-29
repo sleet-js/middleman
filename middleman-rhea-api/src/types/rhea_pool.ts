@@ -3,19 +3,49 @@
 // types for the pool objects returned by the rhea indexer.
 // ========================================
 
+// list-pools / get-pool / list-top-pools / list-pools-by-ids style pool
 export interface RHEA_POOL {
   pool_kind: string;
   token_account_ids: string[];
   amounts: string[];
-  total_fee: number;
+  total_fee: number | string;
   shares_total_supply: string;
   amp: number;
-  farming: boolean;
+  farming?: boolean;
   token_symbols: string[];
-  update_time: number;
+  update_time?: number;
   id: string | number;
   tvl: string;
-  token0_ref_price: string;
+  token0_ref_price?: string;
+  [key: string]: unknown;
+}
+
+// pool/search style pool (same core fields plus search-only fields)
+export interface RHEA_POOL_SEARCH_ITEM {
+  id: string;
+  pool_kind: string;
+  token_account_ids: string[];
+  amounts: string[];
+  token_symbols: string[];
+  tvl: string;
+  total_fee: string;
+  amp: number;
+  shares_total_supply: string;
+  volume_24h: string;
+  fee_volume_24h: string;
+  apy: string;
+  farm_apy: string;
+  is_farm: boolean;
+  is_new: boolean;
+  is_meme: boolean;
+  is_boosted: boolean;
+  farm_is_multi_currency: boolean;
+  top: boolean;
+  rates: unknown;
+  c_amounts: unknown;
+  degens: unknown;
+  uncertified_tokens: unknown;
+  Type: string;
   [key: string]: unknown;
 }
 
@@ -43,7 +73,7 @@ export interface RHEA_POOL_SEARCH_RESPONSE {
   code?: number;
   message?: string;
   data?: {
-    list: RHEA_POOL[];
+    list: RHEA_POOL_SEARCH_ITEM[];
     total: number;
   };
 }
