@@ -51,6 +51,16 @@ gets back `Invalid period. Expected day|week|month|year|total`.
 
 the raw path table is exported as `INTEAR_DEX_ENDPOINT_PATHS`.
 
+## bins
+
+one cli bin per endpoint, in `bin/`. see [`bin/README.md`](./bin/README.md).
+
+```sh
+bun middleman-intear-dex-api/bin/intear_dex_pools_all.ts --kind LaunchV2
+bun middleman-intear-dex-api/bin/intear_dex_stats_tvl_total.ts day
+bun middleman-intear-dex-api/bin/intear_dex_balances.ts ref.huggies.near
+```
+
 ## usage
 
 ```ts
