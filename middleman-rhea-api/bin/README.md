@@ -69,6 +69,15 @@ GET /list-pools-by-tokens?token0=...&token1=... — pools for a pair.
 bun middleman-rhea-api/bin/rhea_list_pools_by_tokens.ts wrap.near usdt.tether-token.near
 ```
 
+## rhea_pool_search
+
+GET /pool/search — search pools by type (classic, dcl, all, stable, degen, hotPools).
+
+```sh
+bun middleman-rhea-api/bin/rhea_pool_search.ts --type dcl --sort tvl --limit 20
+bun middleman-rhea-api/bin/rhea_pool_search.ts --type all --sort 24h --limit 20
+```
+
 ## rhea_timestamp
 
 GET /timestamp — indexer timestamp.
