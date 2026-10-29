@@ -15,7 +15,7 @@ const limit_raw = flags.get("--limit");
 const offset_raw = flags.get("--offset");
 
 const res = await api_rhea_pool_search({
-  type,
+  type: type as any,
   sort,
   limit: limit_raw !== undefined ? Number(limit_raw) : 20,
   offset: offset_raw !== undefined ? Number(offset_raw) : 0,
