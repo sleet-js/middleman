@@ -12,7 +12,9 @@ const { positional } = split_argv(process.argv.slice(2), { boolean_flags: [] });
 const token0 = positional[0];
 const token1 = positional[1];
 if (token0 === undefined || token1 === undefined) {
-  console.error("usage: bun middleman-rhea-api/bin/rhea_list_pools_by_tokens.ts <token0> <token1>");
+  console.error(
+    "usage: bun middleman-rhea-api/bin/rhea_list_pools_by_tokens.ts <token0> <token1>",
+  );
   process.exit(1);
 }
 

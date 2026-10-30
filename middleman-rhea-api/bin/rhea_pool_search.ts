@@ -27,9 +27,18 @@ const res = await api_rhea_pool_search({
 });
 
 const list = res.data?.list ?? [];
-console.log("POOLS", `type=${type} sort=${sort} -> ${list.length} returned (total=${res.data?.total})`);
+console.log(
+  "POOLS",
+  `type=${type} sort=${sort} -> ${list.length} returned (total=${res.data?.total})`,
+);
 for (const p of list) {
-  console.log(" ", p.id, (p.token_symbols || []).join("/"), "kind=" + p.pool_kind, "tvl=" + p.tvl);
+  console.log(
+    " ",
+    p.id,
+    (p.token_symbols || []).join("/"),
+    "kind=" + p.pool_kind,
+    "tvl=" + p.tvl,
+  );
 }
 // ========================================
 // copyright 2026 by sleet.near

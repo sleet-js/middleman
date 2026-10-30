@@ -14,10 +14,12 @@ export async function intear_dex_parse_error(
   fallback: string,
 ): Promise<INTEAR_DEX_API_ERROR> {
   const text = (await response.text()).trim();
-  const message = text.length > 0 ? text : response.statusText || `HTTP ${response.status}`;
+  const message =
+    text.length > 0 ? text : response.statusText || `HTTP ${response.status}`;
 
-  const error = new Error(`${fallback}: ${response.status}: ${message}`) as
-    INTEAR_DEX_API_ERROR;
+  const error = new Error(
+    `${fallback}: ${response.status}: ${message}`,
+  ) as INTEAR_DEX_API_ERROR;
   error.name = "INTEAR_DEX_API_ERROR";
   error.status = response.status;
   return error;

@@ -14,7 +14,10 @@ const limit = limit_raw !== undefined ? Number(limit_raw) : 20;
 const prices = await api_rhea_list_token_price();
 const entries = Object.entries(prices);
 
-console.log("TOKEN PRICES", `${entries.length} total, showing ${Math.min(limit, entries.length)}`);
+console.log(
+  "TOKEN PRICES",
+  `${entries.length} total, showing ${Math.min(limit, entries.length)}`,
+);
 for (const [id, p] of entries.slice(0, limit)) {
   console.log(" ", id, p.symbol, p.price, "decimals=" + p.decimal);
 }

@@ -13,7 +13,9 @@ function encode_scalar(value: unknown): string {
   return String(value);
 }
 
-export function intear_dex_build_query(params: Record<string, unknown>): string {
+export function intear_dex_build_query(
+  params: Record<string, unknown>,
+): string {
   const parts: string[] = [];
 
   for (const [key, value] of Object.entries(params)) {
@@ -46,9 +48,7 @@ export function intear_dex_build_query(params: Record<string, unknown>): string 
 
     const scalar = encode_scalar(value);
     if (scalar.length > 0 || typeof value === "string") {
-      parts.push(
-        `${encodeURIComponent(key)}=${encodeURIComponent(scalar)}`,
-      );
+      parts.push(`${encodeURIComponent(key)}=${encodeURIComponent(scalar)}`);
     }
   }
 

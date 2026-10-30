@@ -17,7 +17,13 @@ if (pool_id === undefined) {
 
 const pool = await api_rhea_get_pool({ pool_id });
 
-console.log("POOL", pool.id, pool.token_symbols.join("/"), "tvl=" + pool.tvl, "fee=" + pool.total_fee);
+console.log(
+  "POOL",
+  pool.id,
+  pool.token_symbols.join("/"),
+  "tvl=" + pool.tvl,
+  "fee=" + pool.total_fee,
+);
 console.log(JSON.stringify(pool, null, 2));
 // ========================================
 // copyright 2026 by sleet.near

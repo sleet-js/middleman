@@ -46,9 +46,7 @@ export function rhea_build_query(params: Record<string, unknown>): string {
 
     const scalar = encode_scalar(value);
     if (scalar.length > 0 || typeof value === "string") {
-      parts.push(
-        `${encodeURIComponent(key)}=${encodeURIComponent(scalar)}`,
-      );
+      parts.push(`${encodeURIComponent(key)}=${encodeURIComponent(scalar)}`);
     }
   }
 

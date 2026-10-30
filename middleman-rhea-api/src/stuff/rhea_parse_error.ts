@@ -34,9 +34,7 @@ export async function rhea_parse_error(
       ? parsed["msg"]
       : response.statusText || `HTTP ${response.status}`;
 
-  const error = new Error(
-    `${fallback}: ${code}: ${message}`,
-  ) as RHEA_API_ERROR;
+  const error = new Error(`${fallback}: ${code}: ${message}`) as RHEA_API_ERROR;
   error.name = "RHEA_API_ERROR";
   error.status = response.status;
   error.code = code;

@@ -18,9 +18,7 @@ export interface INTEAR_DEX_POOL_ASSET {
 
 // where a pool fee goes. either a named account or a community.
 export type INTEAR_DEX_FEE_RECEIVER =
-  | "Pool"
-  | { Account: string }
-  | { Community: string };
+  "Pool" | { Account: string } | { Community: string };
 
 // how the fee share is configured. fixed, or scheduled over a curve.
 export type INTEAR_DEX_FEE_CONFIGURATION =
@@ -83,11 +81,7 @@ export type INTEAR_DEX_POOL_BODY =
   | { Launch: INTEAR_DEX_LAUNCH_POOL }
   | { LaunchV2: INTEAR_DEX_LAUNCH_V2_POOL };
 
-export type INTEAR_DEX_POOL_KIND =
-  | "Public"
-  | "Private"
-  | "Launch"
-  | "LaunchV2";
+export type INTEAR_DEX_POOL_KIND = "Public" | "Private" | "Launch" | "LaunchV2";
 
 // one row of GET /pools/all.
 export interface INTEAR_DEX_POOL {

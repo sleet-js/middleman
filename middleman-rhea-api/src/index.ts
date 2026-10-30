@@ -23,7 +23,10 @@ export * from "./fun/api_rhea_get_service_version";
 export { RHEA_BASE_URL } from "./stuff/rhea_base_url";
 export { RHEA_ENDPOINT_PATHS } from "./stuff/rhea_endpoint_paths";
 export type { RHEA_ENDPOINT_KEY } from "./stuff/rhea_endpoint_paths";
-export { RHEA_APIDATA_BASE_URL, RHEA_APIDATA_ENDPOINT_PATHS } from "./stuff/rhea_endpoint_paths";
+export {
+  RHEA_APIDATA_BASE_URL,
+  RHEA_APIDATA_ENDPOINT_PATHS,
+} from "./stuff/rhea_endpoint_paths";
 export type { RHEA_APIDATA_ENDPOINT_KEY } from "./stuff/rhea_endpoint_paths";
 export type { RHEA_API_ERROR } from "./stuff/rhea_parse_error";
 

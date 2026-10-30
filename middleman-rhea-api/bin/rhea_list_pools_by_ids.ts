@@ -11,10 +11,15 @@ const { positional } = split_argv(process.argv.slice(2), { boolean_flags: [] });
 
 const ids_raw = positional[0];
 if (ids_raw === undefined) {
-  console.error("usage: bun middleman-rhea-api/bin/rhea_list_pools_by_ids.ts <id,id,...>");
+  console.error(
+    "usage: bun middleman-rhea-api/bin/rhea_list_pools_by_ids.ts <id,id,...>",
+  );
   process.exit(1);
 }
-const ids = ids_raw.split(",").filter((x) => x !== "").join("|");
+const ids = ids_raw
+  .split(",")
+  .filter((x) => x !== "")
+  .join("|");
 
 const pools = await api_rhea_list_pools_by_ids({ ids });
 

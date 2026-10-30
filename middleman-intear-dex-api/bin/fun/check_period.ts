@@ -16,7 +16,9 @@ export function check_period(
   flag: string = "--period",
 ): INTEAR_DEX_PERIOD {
   if (raw === undefined) {
-    console.error(`${flag} is required, expected one of ${INTEAR_DEX_PERIODS.join(", ")}`);
+    console.error(
+      `${flag} is required, expected one of ${INTEAR_DEX_PERIODS.join(", ")}`,
+    );
     process.exit(1);
   }
 

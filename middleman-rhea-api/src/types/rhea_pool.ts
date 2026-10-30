@@ -70,12 +70,7 @@ export interface RHEA_FETCH_ALL_POOLS_RESPONSE {
 export type RHEA_POOL_LIST_RESPONSE = RHEA_POOL[];
 
 export type RHEA_POOL_SEARCH_TYPE =
-  | "classic"
-  | "dcl"
-  | "all"
-  | "stable"
-  | "degen"
-  | "hotPools";
+  "classic" | "dcl" | "all" | "stable" | "degen" | "hotPools";
 
 export type RHEA_POOL_SORT = "tvl" | "24h" | "apy" | "volume_24h";
 

@@ -24,12 +24,14 @@ export const RHEA_ENDPOINT_PATHS = {
   rhea_get_dcl_pools_volume: "/get-dcl-pools-volume",
   rhea_get_dcl_pools_tvl_list: "/get-dcl-pools-tvl-list",
   rhea_get_recent_transaction_dcl_swap: "/get-recent-transaction-dcl-swap",
-  rhea_get_recent_transaction_dcl_liquidity: "/get-recent-transaction-dcl-liquidity",
+  rhea_get_recent_transaction_dcl_liquidity:
+    "/get-recent-transaction-dcl-liquidity",
 
   // classic pool transactions
   rhea_get_recent_transaction_swap: "/get-recent-transaction-swap",
   rhea_get_recent_transaction_liquidity: "/get-recent-transaction-liquidity",
-  rhea_get_recent_transaction_limit_order: "/get-recent-transaction-limit-order",
+  rhea_get_recent_transaction_limit_order:
+    "/get-recent-transaction-limit-order",
 
   // tokens
   rhea_list_token: "/list-token",
@@ -79,6 +81,7 @@ export const RHEA_APIDATA_ENDPOINT_PATHS = {
   rhea_apidata_pool_volume: "/api/pool/{id}/volume",
 } as const;
 
-export type RHEA_APIDATA_ENDPOINT_KEY = keyof typeof RHEA_APIDATA_ENDPOINT_PATHS;
+export type RHEA_APIDATA_ENDPOINT_KEY =
+  keyof typeof RHEA_APIDATA_ENDPOINT_PATHS;
 // ========================================
 // copyright 2026 by sleet.near
