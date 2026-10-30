@@ -1,14 +1,43 @@
 {
   "name": "@sleet-js/middleman-rhea-api",
-  "module": "src/index.ts",
+  "version": "0.1.0",
+  "description": "Clean TypeScript middleman for the Rhea indexer API (https://api.rhea.finance).",
+  "license": "MIT",
+  "homepage": "https://sleet-js.near.page",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sleet-js/middleman.git",
+    "directory": "middleman-rhea-api"
+  },
   "type": "module",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "README.md",
+    "LICENSE",
+    "dist/**/*",
+    "bin/**/*"
+  ],
   "scripts": {
-    "typecheck": "bun check"
+    "typecheck": "tsc --noEmit",
+    "build": "rm -f .tsbuildinfo && bun run tsc --build tsconfig.build.json --force",
+    "clean": "bun run tsc --build --clean && rm -rf dist .tsbuildinfo"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "typescript": "^7.0.2"
   },
   "peerDependencies": {
     "typescript": "^7"
-  }
+  },
+  "//": "compatible with bun + tsc --build; emit ESM to dist/, publish dist + bin + README + LICENSE."
 }
