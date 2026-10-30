@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // INTEAR_TRADERS_GET
 // runnable bin for GET /traders via middleman/intear. a token's top
@@ -16,7 +17,7 @@
 // ========================================
 
 import type { trader_range } from "@sleet-js/intear-api-tool-box";
-import { api_intear_traders_get } from "../src";
+import { api_intear_traders_get } from "@sleet-js/middleman-intear-api";
 import { split_argv } from "./fun/split_argv";
 import { check_limit } from "./fun/check_limit";
 

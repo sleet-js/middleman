@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // INTEAR_PRICES_AT_GET
 // runnable bin for GET /prices/at via middleman/intear. the middleman
@@ -18,7 +19,7 @@
 //   bun middleman-intear-api/bin/intear_prices_at_get.ts wrap.near --also usdt.tether-token.near@1767225600000
 // ========================================
 
-import { api_intear_prices_at_get } from "../src";
+import { api_intear_prices_at_get } from "@sleet-js/middleman-intear-api";
 import { split_argv } from "./fun/split_argv";
 
 // --- CONFIG --------------------------------------------------------

@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // INTEAR_DEX_STATS_TOP_ASSETS
 // runnable bin for GET /stats/top/assets/{period}. the middleman logs
@@ -14,7 +15,7 @@
 //   bun middleman-intear-dex-api/bin/intear_dex_stats_top_assets.ts month --limit 20
 // ========================================
 
-import { api_intear_dex_stats_top_assets } from "../src";
+import { api_intear_dex_stats_top_assets } from "@sleet-js/middleman-intear-dex-api";
 import { split_argv } from "./fun/split_argv";
 import { check_period } from "./fun/check_period";
 

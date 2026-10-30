@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // INTEAR_TOKENS_SEARCH
 // runnable bin for GET /tokens/search via middleman/intear.
@@ -13,7 +14,7 @@
 // ========================================
 
 import type { token_requested_field } from "@sleet-js/intear-api-tool-box";
-import { api_intear_tokens_search } from "../src";
+import { api_intear_tokens_search } from "@sleet-js/middleman-intear-api";
 import { split_argv } from "./fun/split_argv";
 import { check_limit } from "./fun/check_limit";
 

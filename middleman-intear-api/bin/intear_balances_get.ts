@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // INTEAR_BALANCES_GET
 // runnable bin for GET /balances via middleman/intear. the middleman
@@ -14,7 +15,7 @@
 //   bun middleman-intear-api/bin/intear_balances_get.ts sleet.near direct --tokens wrap.near --token-fields symbol,balance
 // ========================================
 
-import { api_intear_balances_get } from "../src";
+import { api_intear_balances_get } from "@sleet-js/middleman-intear-api";
 import { split_argv } from "./fun/split_argv";
 
 // --- argv ----------------------------------------------------------

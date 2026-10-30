@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // INTEAR_TRADES_QUERY
 // runnable bin for GET /trades via middleman/intear.
@@ -15,7 +16,7 @@
 // ========================================
 
 import type { trade_requested_field } from "@sleet-js/intear-api-tool-box";
-import { api_intear_trades_query } from "../src";
+import { api_intear_trades_query } from "@sleet-js/middleman-intear-api";
 import { split_argv } from "./fun/split_argv";
 import { check_limit } from "./fun/check_limit";
 

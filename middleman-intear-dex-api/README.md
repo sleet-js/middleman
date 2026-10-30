@@ -5,14 +5,13 @@ clean ts library for interacting with the Intear DEX backend
 
 ```sh
 bun i
-# bun run build
-bun run tsc
+bun run build
 # publish
 bun publish --dry-run
 bunx npm login
 bun publish --access public
 # other
-bun run tsc --noEmit
+bun run typecheck
 bunx prettier . --write
 ```
 

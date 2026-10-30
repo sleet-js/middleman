@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // INTEAR_DEX_STATS_TVL_TOTAL
 // runnable bin for GET /stats/tvl/total/{period}. the middleman logs
@@ -14,7 +15,7 @@
 //   bun middleman-intear-dex-api/bin/intear_dex_stats_tvl_total.ts month
 // ========================================
 
-import { api_intear_dex_stats_tvl_total } from "../src";
+import { api_intear_dex_stats_tvl_total } from "@sleet-js/middleman-intear-dex-api";
 import { split_argv } from "./fun/split_argv";
 import { check_period } from "./fun/check_period";
 

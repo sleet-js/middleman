@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // INTEAR_DEX_POOLS_ALL
 // runnable bin for GET /pools/all. the middleman logs the framed
@@ -18,8 +19,8 @@
 // filters locally so the flag still does what it says.
 // ========================================
 
-import { api_intear_dex_pools_all } from "../src";
-import type { INTEAR_DEX_POOL } from "../src";
+import { api_intear_dex_pools_all } from "@sleet-js/middleman-intear-dex-api";
+import type { INTEAR_DEX_POOL } from "@sleet-js/middleman-intear-dex-api";
 import { split_argv } from "./fun/split_argv";
 import { pool_asset_ids, pool_kind } from "./fun/pool_asset_ids";
 

@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // INTEAR_CANDLES_GET
 // runnable bin for GET /candles via middleman/intear. the middleman
@@ -20,7 +21,7 @@ import type {
   candle_resolution,
   candle_series,
 } from "@sleet-js/intear-api-tool-box";
-import { api_intear_candles_get } from "../src";
+import { api_intear_candles_get } from "@sleet-js/middleman-intear-api";
 import { split_argv } from "./fun/split_argv";
 
 // --- argv ----------------------------------------------------------

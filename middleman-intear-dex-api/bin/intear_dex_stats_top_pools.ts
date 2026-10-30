@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // INTEAR_DEX_STATS_TOP_POOLS
 // runnable bin for GET /stats/top/pools/{period}. the middleman logs
@@ -14,7 +15,7 @@
 //   bun middleman-intear-dex-api/bin/intear_dex_stats_top_pools.ts week --limit 10
 // ========================================
 
-import { api_intear_dex_stats_top_pools } from "../src";
+import { api_intear_dex_stats_top_pools } from "@sleet-js/middleman-intear-dex-api";
 import { split_argv } from "./fun/split_argv";
 import { check_period } from "./fun/check_period";
 

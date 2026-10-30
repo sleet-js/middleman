@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // INTEAR_POSITIONS_GET
 // runnable bin for GET /positions via middleman/intear. the middleman
@@ -12,7 +13,7 @@
 //   bun middleman-intear-api/bin/intear_positions_get.ts sleet.near --limit 50
 // ========================================
 
-import { api_intear_positions_get } from "../src";
+import { api_intear_positions_get } from "@sleet-js/middleman-intear-api";
 import { split_argv } from "./fun/split_argv";
 import { check_limit } from "./fun/check_limit";
 

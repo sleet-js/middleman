@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // INTEAR_DEX_TEAR_STAKING
 // runnable bin for GET /tear/staking?accountId=... . the middleman logs
@@ -15,7 +16,7 @@
 // answers 200 with the pool-wide numbers.
 // ========================================
 
-import { api_intear_dex_tear_staking } from "../src";
+import { api_intear_dex_tear_staking } from "@sleet-js/middleman-intear-dex-api";
 import { split_argv } from "./fun/split_argv";
 
 // --- argv ----------------------------------------------------------

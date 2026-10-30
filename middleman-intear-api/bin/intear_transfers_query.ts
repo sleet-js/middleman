@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // INTEAR_TRANSFERS_QUERY
 // runnable bin for GET /transfers via middleman/intear.
@@ -14,7 +15,7 @@
 // ========================================
 
 import type { transfer_requested_field } from "@sleet-js/intear-api-tool-box";
-import { api_intear_transfers_query } from "../src";
+import { api_intear_transfers_query } from "@sleet-js/middleman-intear-api";
 import { split_argv } from "./fun/split_argv";
 import { check_limit } from "./fun/check_limit";
 

@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // INTEAR_DEX_BALANCES
 // runnable bin for GET /balances?accountId=... . the middleman logs
@@ -15,7 +16,7 @@
 // with "missing field `accountId`".
 // ========================================
 
-import { api_intear_dex_balances } from "../src";
+import { api_intear_dex_balances } from "@sleet-js/middleman-intear-dex-api";
 import { split_argv } from "./fun/split_argv";
 
 // --- argv ----------------------------------------------------------

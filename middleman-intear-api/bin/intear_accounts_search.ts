@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // INTEAR_ACCOUNTS_SEARCH
 // runnable bin for GET /accounts/search via middleman/intear.
@@ -10,7 +11,7 @@
 //   bun middleman-intear-api/bin/intear_accounts_search.ts wrap --limit 20
 // ========================================
 
-import { api_intear_accounts_search } from "../src";
+import { api_intear_accounts_search } from "@sleet-js/middleman-intear-api";
 import { split_argv } from "./fun/split_argv";
 import { check_limit } from "./fun/check_limit";
 

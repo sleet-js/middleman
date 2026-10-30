@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // INTEAR_ACTIVITY_QUERY
 // runnable bin for GET /activity via middleman/intear. this merges
@@ -21,7 +22,7 @@ import type {
   activity_fields,
   activity_kind,
 } from "@sleet-js/intear-api-tool-box";
-import { api_intear_activity_query } from "../src";
+import { api_intear_activity_query } from "@sleet-js/middleman-intear-api";
 import { split_argv } from "./fun/split_argv";
 import { check_limit } from "./fun/check_limit";
 

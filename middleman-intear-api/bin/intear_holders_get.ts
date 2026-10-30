@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // INTEAR_HOLDERS_GET
 // runnable bin for GET /holders via middleman/intear. the middleman
@@ -13,7 +14,7 @@
 //   bun middleman-intear-api/bin/intear_holders_get.ts wrap.near --cursor eyJ...   # next page
 // ========================================
 
-import { api_intear_holders_get } from "../src";
+import { api_intear_holders_get } from "@sleet-js/middleman-intear-api";
 import { split_argv } from "./fun/split_argv";
 import { check_limit } from "./fun/check_limit";
 
