@@ -4,7 +4,7 @@
 // argv: rhea_list_pools_by_ids.ts <id,id,...>
 // ========================================
 
-import { api_rhea_list_pools_by_ids } from "../src";
+import { api_rhea_list_pools_by_ids } from "@sleet-js/middleman-rhea-api";
 import { split_argv } from "./fun/split_argv";
 
 const { positional } = split_argv(process.argv.slice(2), { boolean_flags: [] });

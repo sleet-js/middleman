@@ -3,7 +3,7 @@
 // runnable bin for GET /list-pools.
 // ========================================
 
-import { api_rhea_list_pools } from "../src";
+import { api_rhea_list_pools } from "@sleet-js/middleman-rhea-api";
 import { split_argv } from "./fun/split_argv";
 
 const { flags } = split_argv(process.argv.slice(2), { boolean_flags: [] });

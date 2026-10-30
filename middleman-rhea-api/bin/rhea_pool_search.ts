@@ -5,7 +5,7 @@
 //       [--token-list <substring>] [--pool-id-list <id,id,...>]
 // ========================================
 
-import { api_rhea_pool_search } from "../src";
+import { api_rhea_pool_search } from "@sleet-js/middleman-rhea-api";
 import { split_argv } from "./fun/split_argv";
 
 const { flags } = split_argv(process.argv.slice(2), { boolean_flags: [] });

@@ -3,7 +3,7 @@
 // runnable bin for GET /fetchAllPools.
 // ========================================
 
-import { api_rhea_fetch_all_pools } from "../src";
+import { api_rhea_fetch_all_pools } from "@sleet-js/middleman-rhea-api";
 
 const pools = await api_rhea_fetch_all_pools();
 

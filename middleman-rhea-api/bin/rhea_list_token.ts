@@ -3,7 +3,7 @@
 // runnable bin for GET /list-token. optional --limit to cap rows.
 // ========================================
 
-import { api_rhea_list_token } from "../src";
+import { api_rhea_list_token } from "@sleet-js/middleman-rhea-api";
 import { split_argv } from "./fun/split_argv";
 
 const { flags } = split_argv(process.argv.slice(2), { boolean_flags: [] });

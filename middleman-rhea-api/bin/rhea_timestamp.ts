@@ -3,7 +3,7 @@
 // runnable bin for GET /timestamp.
 // ========================================
 
-import { api_rhea_timestamp } from "../src";
+import { api_rhea_timestamp } from "@sleet-js/middleman-rhea-api";
 
 const res = await api_rhea_timestamp();
 console.log("TIMESTAMP", res.ts);

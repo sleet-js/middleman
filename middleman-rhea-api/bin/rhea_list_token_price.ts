@@ -3,7 +3,7 @@
 // runnable bin for GET /list-token-price.
 // ========================================
 
-import { api_rhea_list_token_price } from "../src";
+import { api_rhea_list_token_price } from "@sleet-js/middleman-rhea-api";
 import { split_argv } from "./fun/split_argv";
 
 const { flags } = split_argv(process.argv.slice(2), { boolean_flags: [] });
