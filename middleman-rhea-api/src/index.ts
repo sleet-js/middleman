@@ -17,6 +17,7 @@ export * from "./fun/api_rhea_get_pool";
 export * from "./fun/api_rhea_list_pools_by_ids";
 export * from "./fun/api_rhea_list_pools_by_tokens";
 export * from "./fun/api_rhea_pool_search";
+export * from "./fun/api_rhea_all_pool_data";
 export * from "./fun/api_rhea_timestamp";
 export * from "./fun/api_rhea_get_service_version";
 

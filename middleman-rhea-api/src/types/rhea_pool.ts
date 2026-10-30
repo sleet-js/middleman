@@ -86,5 +86,21 @@ export interface RHEA_POOL_SEARCH_RESPONSE {
 export interface RHEA_TIMESTAMP_RESPONSE {
   ts: number;
 }
+
+// GET /all-pool-data — the dex's own totals over every indexed pool.
+//
+// NOTE ON NUMBERS: tvl and volume_24h come back as decimal STRINGS
+// with many digits. never parse them with parseFloat if the exact
+// value matters; for a headline figure Number() is enough.
+export interface RHEA_ALL_POOL_DATA {
+  tvl: string;
+  volume_24h: string;
+}
+
+export interface RHEA_ALL_POOL_DATA_RESPONSE {
+  code?: number;
+  message?: string;
+  data?: RHEA_ALL_POOL_DATA;
+}
 // ========================================
 // copyright 2026 by sleet.near
