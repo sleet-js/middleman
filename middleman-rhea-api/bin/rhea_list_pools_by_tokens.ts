@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // RHEA_LIST_POOLS_BY_TOKENS
 // runnable bin for GET /list-pools-by-tokens?token0=...&token1=...

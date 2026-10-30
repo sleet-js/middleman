@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // RHEA_LIST_TOKEN
 // runnable bin for GET /list-token. optional --limit to cap rows.

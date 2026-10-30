@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // RHEA_LIST_POOLS
 // runnable bin for GET /list-pools.

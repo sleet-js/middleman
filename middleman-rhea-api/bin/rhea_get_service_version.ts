@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // RHEA_GET_SERVICE_VERSION
 // runnable bin for GET /get-service-version.

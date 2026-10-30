@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // RHEA_LIST_TOP_POOLS
 // runnable bin for GET /list-top-pools.

@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // RHEA_LIST_TOKEN_PRICE
 // runnable bin for GET /list-token-price.

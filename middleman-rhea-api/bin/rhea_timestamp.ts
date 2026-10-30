@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // RHEA_TIMESTAMP
 // runnable bin for GET /timestamp.

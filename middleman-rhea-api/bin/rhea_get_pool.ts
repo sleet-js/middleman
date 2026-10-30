@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // RHEA_GET_POOL
 // runnable bin for GET /get-pool?pool_id=...

@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 // ========================================
 // RHEA_FETCH_ALL_POOLS
 // runnable bin for GET /fetchAllPools.
