@@ -9,6 +9,9 @@ clean ts library for interacting with different near APIs
 - ✅ middleman-intear-api
 - ✅ middleman-intear-dex-api
 - ✅ middleman-rhea-api
+- 👀 middleman-fastnear-api
+- 👀 middleman-fastnear-api
+- 👀 middleman-fastnear-explorer-api
 
 =====================
 <br/>
