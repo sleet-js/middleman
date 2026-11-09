@@ -1,0 +1,75 @@
+{
+  "name": "@sleet-js/middleman-near-social-api",
+  "version": "0.1.0",
+  "description": "Clean TypeScript middleman for the near.social indexer API (https://api2.near.social).",
+  "license": "MIT",
+  "homepage": "https://sleet-js.near.page",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sleet-js/middleman.git",
+    "directory": "middleman-near-social-api"
+  },
+  "type": "module",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "near-social-status": "./bin/near_social_status.ts",
+    "near-social-feed-for-you": "./bin/near_social_feed_for_you.ts",
+    "near-social-feed-global": "./bin/near_social_feed_global.ts",
+    "near-social-feed-following": "./bin/near_social_feed_following.ts",
+    "near-social-hashtag-feed": "./bin/near_social_hashtag_feed.ts",
+    "near-social-hashtags-trending": "./bin/near_social_hashtags_trending.ts",
+    "near-social-account": "./bin/near_social_account.ts",
+    "near-social-account-posts": "./bin/near_social_account_posts.ts",
+    "near-social-account-replies": "./bin/near_social_account_replies.ts",
+    "near-social-account-media": "./bin/near_social_account_media.ts",
+    "near-social-account-likes": "./bin/near_social_account_likes.ts",
+    "near-social-account-followers": "./bin/near_social_account_followers.ts",
+    "near-social-account-following": "./bin/near_social_account_following.ts",
+    "near-social-search-posts": "./bin/near_social_search_posts.ts",
+    "near-social-search-accounts": "./bin/near_social_search_accounts.ts",
+    "near-social-suggestions": "./bin/near_social_suggestions.ts",
+    "near-social-post": "./bin/near_social_post.ts",
+    "near-social-post-replies": "./bin/near_social_post_replies.ts",
+    "near-social-post-quotes": "./bin/near_social_post_quotes.ts",
+    "near-social-post-likes": "./bin/near_social_post_likes.ts",
+    "near-social-post-reposts": "./bin/near_social_post_reposts.ts",
+    "near-social-post-preview": "./bin/near_social_post_preview.ts",
+    "near-social-posts-batch": "./bin/near_social_posts_batch.ts",
+    "near-social-notifications": "./bin/near_social_notifications.ts",
+    "near-social-notifications-count": "./bin/near_social_notifications_count.ts",
+    "near-social-tx": "./bin/near_social_tx.ts",
+    "near-social-stream": "./bin/near_social_stream.ts",
+    "near-social-legacy": "./bin/near_social_legacy.ts",
+    "near-social-legacy-image": "./bin/near_social_legacy_image.ts"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "README.md",
+    "LICENSE",
+    "dist/**/*",
+    "bin/**/*"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "rm -f .tsbuildinfo && bun run tsc --build tsconfig.build.json --force",
+    "clean": "bun run tsc --build --clean && rm -rf dist .tsbuildinfo"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  },
+  "//": "compatible with bun + tsc --build; emit ESM to dist/, publish dist + bin + README + LICENSE."
+}
