@@ -126,6 +126,18 @@ GET /leaderboard/ppp — the ppp leaderboard.
 bun middleman-protocol-pawns-api/bin/protocol_pawns_leaderboard_ppp.ts --per-page 10
 ```
 
+## protocol_pawns_events
+
+GET /events — the sse stream of the events aimed at an account. prints
+every event until the limit is reached or the timeout runs out. the
+heartbeat arrives every 5 seconds, so a quiet stream is still alive.
+
+```sh
+bun middleman-protocol-pawns-api/bin/protocol_pawns_events.ts sleet.near --limit 10 --timeout-ms 30000
+# watch both sides of a game at once
+bun middleman-protocol-pawns-api/bin/protocol_pawns_events.ts kcameau.near crans.near
+```
+
 ## flags
 
 - `--limit n` — page size, 1..100
@@ -135,6 +147,7 @@ bun middleman-protocol-pawns-api/bin/protocol_pawns_leaderboard_ppp.ts --per-pag
 - `--status s` — active|finished for games, pending|locked|resolved for bets
 - `--exclude-ai` — drop the games against the built-in ai
 - `--dir desc|asc` — elo sort direction
+- `--timeout-ms n` — how long the event stream runs
 
 ```sh
 bun middleman-protocol-pawns-api/bin/protocol_pawns_games.ts --status finished --exclude-ai --limit 2

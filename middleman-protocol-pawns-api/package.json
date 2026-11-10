@@ -35,7 +35,8 @@
     "protocol-pawns-challenges": "./bin/protocol_pawns_challenges.ts",
     "protocol-pawns-bets": "./bin/protocol_pawns_bets.ts",
     "protocol-pawns-leaderboard-elo": "./bin/protocol_pawns_leaderboard_elo.ts",
-    "protocol-pawns-leaderboard-ppp": "./bin/protocol_pawns_leaderboard_ppp.ts"
+    "protocol-pawns-leaderboard-ppp": "./bin/protocol_pawns_leaderboard_ppp.ts",
+    "protocol-pawns-events": "./bin/protocol_pawns_events.ts"
   },
   "files": [
     "README.md",
@@ -46,7 +47,8 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "build": "rm -f .tsbuildinfo && bun run tsc --build tsconfig.build.json --force",
-    "clean": "bun run tsc --build --clean && rm -rf dist .tsbuildinfo"
+    "clean": "bun run tsc --build --clean && rm -rf dist .tsbuildinfo",
+    "test": "bun run test/sse_parse_test.ts && bun run test/new_endpoints_test.ts"
   },
   "devDependencies": {
     "@types/bun": "latest",

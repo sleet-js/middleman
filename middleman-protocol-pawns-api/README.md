@@ -20,9 +20,14 @@ Protocol Pawns API
 <br/>
 https://api.protocol-pawns.com
 
-the api is read-only. it indexes the chess contract `app.chess-game.near` on
-near mainnet; every write (moves, challenges, bets, wagers) is a near
-transaction against that contract, not a call to this api.
+the api is read-only on the chain. it indexes the chess contract
+`app.chess-game.near` on near mainnet; every move, challenge, bet and
+wager is a near transaction against that contract, never a call to this
+api.
+
+the api does write to its own postgres for web push subscriptions, and
+`POST /notify/move` nudges the opponent over the event stream without
+touching the chain.
 
 the openapi spec lives at `https://api.protocol-pawns.com/doc`.
 
@@ -57,6 +62,73 @@ default.
 | `api_protocol_pawns_leaderboard_elo`    | `GET /leaderboard/elo`            |
 | `api_protocol_pawns_leaderboard_ppp`    | `GET /leaderboard/ppp`            |
 | `api_protocol_pawns_leaderboard_bets`   | `GET /leaderboard/bets`           |
+| `api_protocol_pawns_events`             | `GET /events` (sse)               |
+| `api_protocol_pawns_notify_move`        | `POST /notify/move`               |
+| `api_protocol_pawns_vapid_public_key`   | `GET /vapid-public-key`           |
+| `api_protocol_pawns_subscribe_push`     | `POST /account/{account_id}/push-subscription` |
+| `api_protocol_pawns_unsubscribe_push`   | `DELETE /account/{account_id}/push-subscription` |
+
+## the event stream
+
+`GET /events?account={account_id}` is a server-sent event stream that
+carries the events aimed at an account: a move played, a challenge
+made, a game created. it is the efficient way for an agent to learn
+that it is its turn, without polling.
+
+read it as an async iterator:
+
+```ts
+const stream = await api_protocol_pawns_events({
+  account_id: "sleet.near",
+});
+
+for await (const event of stream) {
+  if (event.event_type === "play_move") {
+    // it is your turn
+  }
+  if (event.event_type === "heartbeat") {
+    // the stream is alive
+  }
+}
+```
+
+more than one account can be watched at once, the api takes the param
+repeated:
+
+```ts
+const stream = await api_protocol_pawns_events({
+  account_id: ["kcameau.near", "crans.near"],
+});
+```
+
+the events that come out are typed. `play_move` carries the game id,
+the side that moved, the move in coordinate notation and the board
+after it, `challenge` carries the challenger and the challenged, and
+so on. an event type the api adds later comes through as
+`PROTOCOL_PAWNS_UNKNOWN_EVENT`, so a new server event does not break
+the stream.
+
+the api sends a `heartbeat` every 5 seconds. a missing heartbeat for
+about 10 seconds means the stream is dead and should be reopened.
+
+breaking out of the loop closes the connection, and so does calling
+`.return()` on the iterator.
+
+### telling the opponent a move landed
+
+`POST /notify/move` tells the opponent of a game that a move landed, so
+they can pull the tx logs instead of waiting for the indexer to catch
+up. the caller has to be a participant in the game, the api answers 403
+otherwise, and it is rate limited to one request per second.
+
+```ts
+await api_protocol_pawns_notify_move({
+  tx_hash,
+  game_id: [206540279, "kcameau.near", "crans.near"],
+  account_id: "kcameau.near",
+});
+```
+
 
 ## the game id
 
@@ -114,11 +186,16 @@ indexer. the wrapper is correct, the server side needs a fix, so
 
 ## writing to the game
 
-this package does not write. the api is read-only, so playing a game
-means sending near transactions to the contract `app.chess-game.near`.
-their agent skill at
+this package does not play the game. the chain is the source of truth,
+so playing means sending near transactions to the contract
+`app.chess-game.near`. their agent skill at
 `https://app.protocol-pawns.com/.well-known/ai/skill.md` documents the
 contract methods, and `near-cli-rs` or `near-api-js` signs them.
+
+the api does have two endpoints that write, but neither of them touches
+the chain: the push subscription pair writes to the api's own database,
+and `POST /notify/move` only nudges the opponent over the event
+stream.
 
 =====================
 <br/>

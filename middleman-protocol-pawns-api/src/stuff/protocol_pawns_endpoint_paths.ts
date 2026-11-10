@@ -70,6 +70,18 @@ export const PROTOCOL_PAWNS_ENDPOINT_PATHS = {
 
   // global bets
   protocol_pawns_bets: "/bets",
+
+  // tell the opponent of a game that a move landed
+  protocol_pawns_notify_move: "/notify/move",
+
+  // the vapid key the api signs web push messages with
+  protocol_pawns_vapid_public_key: "/vapid-public-key",
+
+  // register a browser push endpoint for an account
+  protocol_pawns_subscribe_push: "/account/{account_id}/push-subscription",
+
+  // remove a browser push endpoint from an account
+  protocol_pawns_unsubscribe_push: "/account/{account_id}/push-subscription",
 } as const;
 
 export type PROTOCOL_PAWNS_ENDPOINT_KEY =

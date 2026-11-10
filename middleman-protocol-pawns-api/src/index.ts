@@ -11,6 +11,7 @@
 
 export * from "./stuff/api_protocol_pawns_get";
 export * from "./stuff/api_protocol_pawns_post";
+export * from "./stuff/api_protocol_pawns_delete";
 export * from "./fun/api_protocol_pawns_info";
 export * from "./fun/api_protocol_pawns_stats";
 export * from "./fun/api_protocol_pawns_games";
@@ -31,6 +32,11 @@ export * from "./fun/api_protocol_pawns_leaderboard_ppp";
 export * from "./fun/api_protocol_pawns_leaderboard_bets";
 export * from "./fun/api_protocol_pawns_challenges";
 export * from "./fun/api_protocol_pawns_bets";
+export * from "./fun/api_protocol_pawns_events";
+export * from "./fun/api_protocol_pawns_notify_move";
+export * from "./fun/api_protocol_pawns_vapid_public_key";
+export * from "./fun/api_protocol_pawns_subscribe_push";
+export * from "./fun/api_protocol_pawns_unsubscribe_push";
 
 export {
   PROTOCOL_PAWNS_BASE_URL,
@@ -60,7 +66,13 @@ export {
   protocol_pawns_game_id_to_string,
 } from "./stuff/protocol_pawns_game_id";
 export type { PROTOCOL_PAWNS_GAME_ID_PARAMS } from "./stuff/protocol_pawns_game_id";
+export {
+  protocol_pawns_split_sse_blocks,
+  protocol_pawns_parse_sse_block,
+  protocol_pawns_parse_sse_event,
+} from "./stuff/protocol_pawns_parse_sse";
 
 export * from "./types/protocol_pawns_types";
+export * from "./types/protocol_pawns_event_types";
 // ========================================
 // copyright 2026 by sleet.near
