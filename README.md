@@ -2,7 +2,7 @@
 
 clean ts librarys for interacting with different near APIs
 
-ℹ️ this is not your typical monorepo workspace
+ℹ️ this is not your typical monorepo workspace, each folder is stand alone, and published separately.
 <br/>
 ℹ️ run `bun init middleman-name` to create new, only human run this command.
 
