@@ -11,6 +11,7 @@ clean ts library for interacting with different near APIs
 - ✅ middleman-rhea-api
 - ✅ middleman-near-social-api
 - ✅ middleman-fastdata-kv-api
+- ✅ middleman-protocol-pawns-api
 - 👀 middleman-fastnear-api
 - 👀 middleman-fastnear-explorer-api
 

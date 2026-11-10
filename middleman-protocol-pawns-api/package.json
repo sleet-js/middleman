@@ -1,0 +1,60 @@
+{
+  "name": "@sleet-js/middleman-protocol-pawns-api",
+  "version": "0.1.0",
+  "description": "Clean TypeScript middleman for the Protocol Pawns API (https://api.protocol-pawns.com).",
+  "license": "MIT",
+  "homepage": "https://sleet-js.near.page",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sleet-js/middleman.git",
+    "directory": "middleman-protocol-pawns-api"
+  },
+  "type": "module",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": {
+    "protocol-pawns-stats": "./bin/protocol_pawns_stats.ts",
+    "protocol-pawns-info": "./bin/protocol_pawns_info.ts",
+    "protocol-pawns-games": "./bin/protocol_pawns_games.ts",
+    "protocol-pawns-game": "./bin/protocol_pawns_game.ts",
+    "protocol-pawns-game-moves": "./bin/protocol_pawns_game_moves.ts",
+    "protocol-pawns-account": "./bin/protocol_pawns_account.ts",
+    "protocol-pawns-account-active-game": "./bin/protocol_pawns_account_active_game.ts",
+    "protocol-pawns-account-stats": "./bin/protocol_pawns_account_stats.ts",
+    "protocol-pawns-account-query": "./bin/protocol_pawns_account_query.ts",
+    "protocol-pawns-account-challenges": "./bin/protocol_pawns_account_challenges.ts",
+    "protocol-pawns-challenges": "./bin/protocol_pawns_challenges.ts",
+    "protocol-pawns-bets": "./bin/protocol_pawns_bets.ts",
+    "protocol-pawns-leaderboard-elo": "./bin/protocol_pawns_leaderboard_elo.ts",
+    "protocol-pawns-leaderboard-ppp": "./bin/protocol_pawns_leaderboard_ppp.ts"
+  },
+  "files": [
+    "README.md",
+    "LICENSE",
+    "dist/**/*",
+    "bin/**/*"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "rm -f .tsbuildinfo && bun run tsc --build tsconfig.build.json --force",
+    "clean": "bun run tsc --build --clean && rm -rf dist .tsbuildinfo"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  },
+  "//": "compatible with bun + tsc --build; emit ESM to dist/, publish dist + bin + README + LICENSE."
+}
