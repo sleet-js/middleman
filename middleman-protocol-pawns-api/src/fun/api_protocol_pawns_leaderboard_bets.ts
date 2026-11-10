@@ -27,9 +27,11 @@ export async function api_protocol_pawns_leaderboard_bets({
   limit,
   network,
 }: API_PROTOCOL_PAWNS_LEADERBOARD_BETS_PARAMS): Promise<PROTOCOL_PAWNS_BET_LEADERBOARD_PAGE> {
-  const path = `${PROTOCOL_PAWNS_ENDPOINT_PATHS.protocol_pawns_leaderboard_bets}${protocol_pawns_build_query({
-    query: { cursor, limit },
-  })}`;
+  const path = `${PROTOCOL_PAWNS_ENDPOINT_PATHS.protocol_pawns_leaderboard_bets}${protocol_pawns_build_query(
+    {
+      query: { cursor, limit },
+    },
+  )}`;
 
   return api_protocol_pawns_get<PROTOCOL_PAWNS_BET_LEADERBOARD_PAGE>({
     path,

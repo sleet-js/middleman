@@ -40,33 +40,33 @@ default.
 
 ## what is in the box
 
-| function                                | endpoint                          |
-| --------------------------------------- | --------------------------------- |
-| `api_protocol_pawns_info`               | `GET /info`                       |
-| `api_protocol_pawns_stats`              | `GET /stats`                      |
-| `api_protocol_pawns_games`              | `GET /games`                      |
-| `api_protocol_pawns_game`               | `GET /game/{game_id}`             |
-| `api_protocol_pawns_game_moves`         | `GET /game/{game_id}/moves`       |
-| `api_protocol_pawns_game_bets`          | `GET /game/{game_id}/bets`        |
-| `api_protocol_pawns_query_games`        | `POST /query`                     |
-| `api_protocol_pawns_account`            | `GET /account/{account_id}`       |
-| `api_protocol_pawns_account_active_game`| `GET /account/{account_id}/active-game` |
-| `api_protocol_pawns_account_stats`      | `GET /account/{account_id}/stats` |
-| `api_protocol_pawns_account_stats_batch`| `POST /account/stats/batch`       |
-| `api_protocol_pawns_account_query`      | `POST /account/query`             |
-| `api_protocol_pawns_account_challenges` | `GET /account/{account_id}/challenges` |
-| `api_protocol_pawns_account_bets`       | `GET /account/{account_id}/bets`  |
-| `api_protocol_pawns_account_bet_stats`  | `GET /account/{account_id}/bet-stats` |
-| `api_protocol_pawns_challenges`         | `GET /challenges`                 |
-| `api_protocol_pawns_bets`               | `GET /bets`                       |
-| `api_protocol_pawns_leaderboard_elo`    | `GET /leaderboard/elo`            |
-| `api_protocol_pawns_leaderboard_ppp`    | `GET /leaderboard/ppp`            |
-| `api_protocol_pawns_leaderboard_bets`   | `GET /leaderboard/bets`           |
-| `api_protocol_pawns_events`             | `GET /events` (sse)               |
-| `api_protocol_pawns_notify_move`        | `POST /notify/move`               |
-| `api_protocol_pawns_vapid_public_key`   | `GET /vapid-public-key`           |
-| `api_protocol_pawns_subscribe_push`     | `POST /account/{account_id}/push-subscription` |
-| `api_protocol_pawns_unsubscribe_push`   | `DELETE /account/{account_id}/push-subscription` |
+| function                                 | endpoint                                         |
+| ---------------------------------------- | ------------------------------------------------ |
+| `api_protocol_pawns_info`                | `GET /info`                                      |
+| `api_protocol_pawns_stats`               | `GET /stats`                                     |
+| `api_protocol_pawns_games`               | `GET /games`                                     |
+| `api_protocol_pawns_game`                | `GET /game/{game_id}`                            |
+| `api_protocol_pawns_game_moves`          | `GET /game/{game_id}/moves`                      |
+| `api_protocol_pawns_game_bets`           | `GET /game/{game_id}/bets`                       |
+| `api_protocol_pawns_query_games`         | `POST /query`                                    |
+| `api_protocol_pawns_account`             | `GET /account/{account_id}`                      |
+| `api_protocol_pawns_account_active_game` | `GET /account/{account_id}/active-game`          |
+| `api_protocol_pawns_account_stats`       | `GET /account/{account_id}/stats`                |
+| `api_protocol_pawns_account_stats_batch` | `POST /account/stats/batch`                      |
+| `api_protocol_pawns_account_query`       | `POST /account/query`                            |
+| `api_protocol_pawns_account_challenges`  | `GET /account/{account_id}/challenges`           |
+| `api_protocol_pawns_account_bets`        | `GET /account/{account_id}/bets`                 |
+| `api_protocol_pawns_account_bet_stats`   | `GET /account/{account_id}/bet-stats`            |
+| `api_protocol_pawns_challenges`          | `GET /challenges`                                |
+| `api_protocol_pawns_bets`                | `GET /bets`                                      |
+| `api_protocol_pawns_leaderboard_elo`     | `GET /leaderboard/elo`                           |
+| `api_protocol_pawns_leaderboard_ppp`     | `GET /leaderboard/ppp`                           |
+| `api_protocol_pawns_leaderboard_bets`    | `GET /leaderboard/bets`                          |
+| `api_protocol_pawns_events`              | `GET /events` (sse)                              |
+| `api_protocol_pawns_notify_move`         | `POST /notify/move`                              |
+| `api_protocol_pawns_vapid_public_key`    | `GET /vapid-public-key`                          |
+| `api_protocol_pawns_subscribe_push`      | `POST /account/{account_id}/push-subscription`   |
+| `api_protocol_pawns_unsubscribe_push`    | `DELETE /account/{account_id}/push-subscription` |
 
 ## the event stream
 
@@ -128,7 +128,6 @@ await api_protocol_pawns_notify_move({
   account_id: "kcameau.near",
 });
 ```
-
 
 ## the game id
 

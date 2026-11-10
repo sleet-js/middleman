@@ -25,8 +25,7 @@ export interface PROTOCOL_PAWNS_EVENT_ENVELOPE {
 
 // a game was created. the payload carries the game id, the two sides
 // and the starting board.
-export interface PROTOCOL_PAWNS_CREATE_GAME_EVENT
-  extends PROTOCOL_PAWNS_EVENT_ENVELOPE {
+export interface PROTOCOL_PAWNS_CREATE_GAME_EVENT extends PROTOCOL_PAWNS_EVENT_ENVELOPE {
   event_type: "create_game";
   event_data: {
     game_id: PROTOCOL_PAWNS_GAME_ID;
@@ -38,8 +37,7 @@ export interface PROTOCOL_PAWNS_CREATE_GAME_EVENT
 
 // a move was played. the payload carries the game id, the side that
 // moved, the move in coordinate notation and the board after it.
-export interface PROTOCOL_PAWNS_PLAY_MOVE_EVENT
-  extends PROTOCOL_PAWNS_EVENT_ENVELOPE {
+export interface PROTOCOL_PAWNS_PLAY_MOVE_EVENT extends PROTOCOL_PAWNS_EVENT_ENVELOPE {
   event_type: "play_move";
   event_data: {
     game_id: PROTOCOL_PAWNS_GAME_ID;
@@ -51,8 +49,7 @@ export interface PROTOCOL_PAWNS_PLAY_MOVE_EVENT
 }
 
 // a player resigned.
-export interface PROTOCOL_PAWNS_RESIGN_GAME_EVENT
-  extends PROTOCOL_PAWNS_EVENT_ENVELOPE {
+export interface PROTOCOL_PAWNS_RESIGN_GAME_EVENT extends PROTOCOL_PAWNS_EVENT_ENVELOPE {
   event_type: "resign_game";
   event_data: {
     game_id: PROTOCOL_PAWNS_GAME_ID;
@@ -62,8 +59,7 @@ export interface PROTOCOL_PAWNS_RESIGN_GAME_EVENT
 }
 
 // a game was cancelled.
-export interface PROTOCOL_PAWNS_CANCEL_GAME_EVENT
-  extends PROTOCOL_PAWNS_EVENT_ENVELOPE {
+export interface PROTOCOL_PAWNS_CANCEL_GAME_EVENT extends PROTOCOL_PAWNS_EVENT_ENVELOPE {
   event_type: "cancel_game";
   event_data: {
     game_id: PROTOCOL_PAWNS_GAME_ID;
@@ -72,8 +68,7 @@ export interface PROTOCOL_PAWNS_CANCEL_GAME_EVENT
 }
 
 // somebody challenged you.
-export interface PROTOCOL_PAWNS_CHALLENGE_EVENT
-  extends PROTOCOL_PAWNS_EVENT_ENVELOPE {
+export interface PROTOCOL_PAWNS_CHALLENGE_EVENT extends PROTOCOL_PAWNS_EVENT_ENVELOPE {
   event_type: "challenge";
   event_data: {
     id: string;
@@ -84,8 +79,7 @@ export interface PROTOCOL_PAWNS_CHALLENGE_EVENT
 }
 
 // a challenge was accepted.
-export interface PROTOCOL_PAWNS_ACCEPT_CHALLENGE_EVENT
-  extends PROTOCOL_PAWNS_EVENT_ENVELOPE {
+export interface PROTOCOL_PAWNS_ACCEPT_CHALLENGE_EVENT extends PROTOCOL_PAWNS_EVENT_ENVELOPE {
   event_type: "accept_challenge";
   event_data: {
     challenge_id: string;
@@ -94,8 +88,7 @@ export interface PROTOCOL_PAWNS_ACCEPT_CHALLENGE_EVENT
 }
 
 // a challenge was rejected.
-export interface PROTOCOL_PAWNS_REJECT_CHALLENGE_EVENT
-  extends PROTOCOL_PAWNS_EVENT_ENVELOPE {
+export interface PROTOCOL_PAWNS_REJECT_CHALLENGE_EVENT extends PROTOCOL_PAWNS_EVENT_ENVELOPE {
   event_type: "reject_challenge";
   event_data: {
     challenge_id: string;
@@ -106,8 +99,7 @@ export interface PROTOCOL_PAWNS_REJECT_CHALLENGE_EVENT
 // missing for ~10 seconds the stream is dead and should be reopened.
 //
 // the shape matches the other events, the payload is empty.
-export interface PROTOCOL_PAWNS_HEARTBEAT_EVENT
-  extends PROTOCOL_PAWNS_EVENT_ENVELOPE {
+export interface PROTOCOL_PAWNS_HEARTBEAT_EVENT extends PROTOCOL_PAWNS_EVENT_ENVELOPE {
   event_type: "heartbeat";
   event_data: Record<string, unknown>;
 }
@@ -115,8 +107,7 @@ export interface PROTOCOL_PAWNS_HEARTBEAT_EVENT
 // a move landed and the opponent was told about it over the stream,
 // so they can pull the tx logs. this one is not sent by the indexer
 // but by the caller of POST /notify/move.
-export interface PROTOCOL_PAWNS_PLAY_MOVE_TX_EVENT
-  extends PROTOCOL_PAWNS_EVENT_ENVELOPE {
+export interface PROTOCOL_PAWNS_PLAY_MOVE_TX_EVENT extends PROTOCOL_PAWNS_EVENT_ENVELOPE {
   event_type: "play_move_tx";
   event_data: {
     game_id: PROTOCOL_PAWNS_GAME_ID;

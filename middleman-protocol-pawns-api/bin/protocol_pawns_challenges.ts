@@ -19,9 +19,7 @@ const res = await api_protocol_pawns_challenges({
 console.log(`CHALLENGES ${res.items.length} item(s)`);
 for (const ch of res.items) {
   const wager =
-    ch.wager_token === null
-      ? "-"
-      : `${ch.wager_amount} ${ch.wager_token}`;
+    ch.wager_token === null ? "-" : `${ch.wager_amount} ${ch.wager_token}`;
   console.log(
     ` ${ch.id} status=${ch.status} wager=${wager} created=${ch.created_at}`,
   );

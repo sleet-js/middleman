@@ -31,9 +31,11 @@ export async function api_protocol_pawns_leaderboard_elo({
   dir,
   network,
 }: API_PROTOCOL_PAWNS_LEADERBOARD_ELO_PARAMS): Promise<PROTOCOL_PAWNS_RANKING_PAGE> {
-  const path = `${PROTOCOL_PAWNS_ENDPOINT_PATHS.protocol_pawns_leaderboard_elo}${protocol_pawns_build_query({
-    query: { page, per_page, dir },
-  })}`;
+  const path = `${PROTOCOL_PAWNS_ENDPOINT_PATHS.protocol_pawns_leaderboard_elo}${protocol_pawns_build_query(
+    {
+      query: { page, per_page, dir },
+    },
+  )}`;
 
   return api_protocol_pawns_get<PROTOCOL_PAWNS_RANKING_PAGE>({
     path,

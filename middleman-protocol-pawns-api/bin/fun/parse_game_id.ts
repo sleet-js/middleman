@@ -29,11 +29,7 @@ export function parse_game_id(raw: string): PROTOCOL_PAWNS_GAME_ID {
     process.exit(1);
   }
 
-  const [block_height, white, black] = parsed as [
-    unknown,
-    unknown,
-    unknown,
-  ];
+  const [block_height, white, black] = parsed as [unknown, unknown, unknown];
 
   if (typeof block_height !== "number" || !Number.isInteger(block_height)) {
     console.error("game id: the block height must be an integer");

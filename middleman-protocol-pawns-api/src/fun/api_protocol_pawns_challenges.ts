@@ -23,9 +23,11 @@ export async function api_protocol_pawns_challenges({
   limit,
   network,
 }: API_PROTOCOL_PAWNS_CHALLENGES_PARAMS): Promise<PROTOCOL_PAWNS_PAGINATED_CHALLENGES> {
-  const path = `${PROTOCOL_PAWNS_ENDPOINT_PATHS.protocol_pawns_challenges}${protocol_pawns_build_query({
-    query: { cursor, limit },
-  })}`;
+  const path = `${PROTOCOL_PAWNS_ENDPOINT_PATHS.protocol_pawns_challenges}${protocol_pawns_build_query(
+    {
+      query: { cursor, limit },
+    },
+  )}`;
 
   return api_protocol_pawns_get<PROTOCOL_PAWNS_PAGINATED_CHALLENGES>({
     path,

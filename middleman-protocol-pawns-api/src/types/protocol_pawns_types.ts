@@ -12,32 +12,23 @@
 
 // the id of a game, as the contract builds it:
 // [block_height, white_account_id, black_account_id_or_null]
-export type PROTOCOL_PAWNS_GAME_ID = [
-  number,
-  string,
-  string | null,
-];
+export type PROTOCOL_PAWNS_GAME_ID = [number, string, string | null];
 
 export type PROTOCOL_PAWNS_DIFFICULTY = "Easy" | "Medium" | "Hard" | "VeryHard";
 
 export type PROTOCOL_PAWNS_COLOR = "White" | "Black";
 
 export type PROTOCOL_PAWNS_GAME_STATUS =
-  | "in_progress"
-  | "finished"
-  | "cancelled";
+  "in_progress" | "finished" | "cancelled";
 
 export type PROTOCOL_PAWNS_CHALLENGE_STATUS =
-  | "pending"
-  | "accepted"
-  | "rejected";
+  "pending" | "accepted" | "rejected";
 
 export type PROTOCOL_PAWNS_BET_STATUS = "pending" | "locked" | "resolved";
 
 // a game outcome. a stalemate has no color.
 export type PROTOCOL_PAWNS_GAME_OUTCOME =
-  | { result: "Stalemate" }
-  | { result: "Victory"; color: PROTOCOL_PAWNS_COLOR };
+  { result: "Stalemate" } | { result: "Victory"; color: PROTOCOL_PAWNS_COLOR };
 
 // one side of a game. the black side of an ai game carries the
 // difficulty instead of an account id.
@@ -122,8 +113,7 @@ export interface PROTOCOL_PAWNS_ACCOUNT_STATS {
 }
 
 // an account search hit, with elo.
-export interface PROTOCOL_PAWNS_ACCOUNT_SEARCH_RESULT
-  extends PROTOCOL_PAWNS_ACCOUNT_STATS {
+export interface PROTOCOL_PAWNS_ACCOUNT_SEARCH_RESULT extends PROTOCOL_PAWNS_ACCOUNT_STATS {
   elo: number | null;
 }
 

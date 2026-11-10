@@ -25,9 +25,11 @@ export async function api_protocol_pawns_bets({
   limit,
   network,
 }: API_PROTOCOL_PAWNS_BETS_PARAMS): Promise<PROTOCOL_PAWNS_PAGINATED_BETS> {
-  const path = `${PROTOCOL_PAWNS_ENDPOINT_PATHS.protocol_pawns_bets}${protocol_pawns_build_query({
-    query: { status, cursor, limit },
-  })}`;
+  const path = `${PROTOCOL_PAWNS_ENDPOINT_PATHS.protocol_pawns_bets}${protocol_pawns_build_query(
+    {
+      query: { status, cursor, limit },
+    },
+  )}`;
 
   return api_protocol_pawns_get<PROTOCOL_PAWNS_PAGINATED_BETS>({
     path,

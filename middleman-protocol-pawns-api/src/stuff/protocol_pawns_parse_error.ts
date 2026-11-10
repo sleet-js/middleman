@@ -33,7 +33,9 @@ export async function protocol_pawns_parse_error(
 
   const message = detail ?? response.statusText ?? `HTTP ${response.status}`;
 
-  const error = new Error(`${fallback}: ${message}`) as PROTOCOL_PAWNS_API_ERROR;
+  const error = new Error(
+    `${fallback}: ${message}`,
+  ) as PROTOCOL_PAWNS_API_ERROR;
   error.name = "PROTOCOL_PAWNS_API_ERROR";
   error.status = response.status;
   return error;

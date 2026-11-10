@@ -24,7 +24,9 @@ const res = await api_protocol_pawns_leaderboard_elo({
   dir,
 });
 
-console.log(`ELO LEADERBOARD page ${res.page}/${res.total_pages} (${res.total})`);
+console.log(
+  `ELO LEADERBOARD page ${res.page}/${res.total_pages} (${res.total})`,
+);
 for (const entry of res.entries) {
   console.log(
     ` ${String(entry.rank).padStart(3)}. ${entry.account_id.padEnd(32)} elo=${entry.elo?.toFixed(1) ?? "-"} ppp=${entry.ppp} w/l/d=${entry.wins}/${entry.losses}/${entry.draws}`,

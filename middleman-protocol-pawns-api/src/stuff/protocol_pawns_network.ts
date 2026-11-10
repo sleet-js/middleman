@@ -15,8 +15,7 @@ export const PROTOCOL_PAWNS_NETWORKS: readonly PROTOCOL_PAWNS_NETWORK[] = [
   "mainnet",
 ];
 
-export const PROTOCOL_PAWNS_DEFAULT_NETWORK: PROTOCOL_PAWNS_NETWORK =
-  "mainnet";
+export const PROTOCOL_PAWNS_DEFAULT_NETWORK: PROTOCOL_PAWNS_NETWORK = "mainnet";
 
 export function protocol_pawns_is_network(
   value: string,

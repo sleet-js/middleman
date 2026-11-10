@@ -1,6 +1,6 @@
 # middleman
 
-clean ts library for interacting with different near APIs
+clean ts librarys for interacting with different near APIs
 
 ℹ️ this is not your typical monorepo workspace
 <br/>
@@ -14,6 +14,10 @@ clean ts library for interacting with different near APIs
 - ✅ middleman-protocol-pawns-api
 - 👀 middleman-fastnear-api
 - 👀 middleman-fastnear-explorer-api
+
+```sh
+bunx prettier . --write
+```
 
 =====================
 <br/>

@@ -23,7 +23,8 @@ if (accounts.length === 0) {
   process.exit(1);
 }
 
-const limit = check_limit(flags.get("--limit"), { min: 1, max: 10000 }, "--limit") ?? 20;
+const limit =
+  check_limit(flags.get("--limit"), { min: 1, max: 10000 }, "--limit") ?? 20;
 const timeout_ms = check_limit(
   flags.get("--timeout-ms"),
   { min: 1000, max: 3600000 },

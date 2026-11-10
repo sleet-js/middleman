@@ -26,9 +26,11 @@ export async function api_protocol_pawns_leaderboard_ppp({
   per_page,
   network,
 }: API_PROTOCOL_PAWNS_LEADERBOARD_PPP_PARAMS): Promise<PROTOCOL_PAWNS_RANKING_PAGE> {
-  const path = `${PROTOCOL_PAWNS_ENDPOINT_PATHS.protocol_pawns_leaderboard_ppp}${protocol_pawns_build_query({
-    query: { page, per_page },
-  })}`;
+  const path = `${PROTOCOL_PAWNS_ENDPOINT_PATHS.protocol_pawns_leaderboard_ppp}${protocol_pawns_build_query(
+    {
+      query: { page, per_page },
+    },
+  )}`;
 
   return api_protocol_pawns_get<PROTOCOL_PAWNS_RANKING_PAGE>({
     path,

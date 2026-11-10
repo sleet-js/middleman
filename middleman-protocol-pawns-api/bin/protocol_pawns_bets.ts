@@ -13,7 +13,9 @@ const { flags } = split_argv(process.argv.slice(2));
 
 const status_raw = flags.get("--status");
 const status =
-  status_raw === "pending" || status_raw === "locked" || status_raw === "resolved"
+  status_raw === "pending" ||
+  status_raw === "locked" ||
+  status_raw === "resolved"
     ? status_raw
     : undefined;
 

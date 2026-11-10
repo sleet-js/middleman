@@ -39,16 +39,18 @@ export async function api_protocol_pawns_games({
   exclude_ai,
   network,
 }: API_PROTOCOL_PAWNS_GAMES_PARAMS): Promise<PROTOCOL_PAWNS_PAGINATED_GAMES> {
-  const path = `${PROTOCOL_PAWNS_ENDPOINT_PATHS.protocol_pawns_games}${protocol_pawns_build_query({
-    query: {
-      status,
-      cursor,
-      page,
-      limit,
-      // the api reads this as the string "true" or "1"
-      exclude_ai: exclude_ai === undefined ? undefined : String(exclude_ai),
+  const path = `${PROTOCOL_PAWNS_ENDPOINT_PATHS.protocol_pawns_games}${protocol_pawns_build_query(
+    {
+      query: {
+        status,
+        cursor,
+        page,
+        limit,
+        // the api reads this as the string "true" or "1"
+        exclude_ai: exclude_ai === undefined ? undefined : String(exclude_ai),
+      },
     },
-  })}`;
+  )}`;
 
   return api_protocol_pawns_get<PROTOCOL_PAWNS_PAGINATED_GAMES>({
     path,

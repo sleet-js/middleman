@@ -26,9 +26,10 @@ interface SSE_FIELD {
 }
 
 // split a raw chunk into its blocks. a block ends at a blank line.
-export function protocol_pawns_split_sse_blocks(
-  chunk: string,
-): { blocks: string[]; rest: string } {
+export function protocol_pawns_split_sse_blocks(chunk: string): {
+  blocks: string[];
+  rest: string;
+} {
   const normalized = chunk.replace(/\r\n/g, "\n");
   const parts = normalized.split("\n\n");
   const rest = parts.pop() ?? "";
@@ -108,8 +109,8 @@ export function protocol_pawns_parse_sse_event(
 
   const envelope: PROTOCOL_PAWNS_EVENT_ENVELOPE = {
     trigger_block_height: Number(parsed["trigger_block_height"] ?? 0),
-    trigger_block_timestamp:
-      parsed["trigger_block_timestamp"] as string | number,
+    trigger_block_timestamp: parsed["trigger_block_timestamp"] as
+      string | number,
     event_data,
   };
 

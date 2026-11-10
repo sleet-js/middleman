@@ -34,9 +34,8 @@ export interface API_PROTOCOL_PAWNS_EVENTS_PARAMS {
 }
 
 // an async iterator over the events of the stream.
-export type PROTOCOL_PAWNS_EVENT_STREAM = AsyncIterableIterator<
-  PROTOCOL_PAWNS_EVENT
->;
+export type PROTOCOL_PAWNS_EVENT_STREAM =
+  AsyncIterableIterator<PROTOCOL_PAWNS_EVENT>;
 
 // build the url of the stream.
 export function protocol_pawns_events_url({
@@ -86,7 +85,9 @@ export async function api_protocol_pawns_events({
 
   const body = response.body;
   if (body === null) {
-    throw new Error("api_protocol_pawns_events failed: the response has no body");
+    throw new Error(
+      "api_protocol_pawns_events failed: the response has no body",
+    );
   }
 
   const reader = body.getReader();
@@ -146,7 +147,9 @@ export async function api_protocol_pawns_events({
       return { value: undefined, done: true };
     },
 
-    async throw(error?: unknown): Promise<IteratorResult<PROTOCOL_PAWNS_EVENT>> {
+    async throw(
+      error?: unknown,
+    ): Promise<IteratorResult<PROTOCOL_PAWNS_EVENT>> {
       await stream.return?.();
       throw error;
     },

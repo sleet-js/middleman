@@ -20,7 +20,9 @@ const res = await api_protocol_pawns_leaderboard_ppp({
   ),
 });
 
-console.log(`PPP LEADERBOARD page ${res.page}/${res.total_pages} (${res.total})`);
+console.log(
+  `PPP LEADERBOARD page ${res.page}/${res.total_pages} (${res.total})`,
+);
 for (const entry of res.entries) {
   console.log(
     ` ${String(entry.rank).padStart(3)}. ${entry.account_id.padEnd(32)} ppp=${entry.ppp} elo=${entry.elo?.toFixed(1) ?? "-"} w/l/d=${entry.wins}/${entry.losses}/${entry.draws}`,
