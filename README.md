@@ -6,12 +6,21 @@ clean ts librarys for interacting with different near APIs
 <br/>
 ℹ️ run `bun init middleman-name` to create new, only human run this command.
 
-- ✅ middleman-intear-api
-- ✅ middleman-intear-dex-api
-- ✅ middleman-rhea-api
-- ✅ middleman-near-social-api
+<!--
+emjies
+👀 - idea
+✅ - code is here
+🔴 - live on npm
+-->
+
+
+
+- ✅ 🔴 middleman-intear-api
+- ✅ 🔴 middleman-intear-dex-api
+- ✅ 🔴 middleman-rhea-api
+- ✅ 🔴 middleman-near-social-api
 - ✅ middleman-fastdata-kv-api
-- ✅ middleman-protocol-pawns-api
+- ✅ 🔴 middleman-protocol-pawns-api
 - 👀 middleman-fastnear-api
 - 👀 middleman-fastnear-explorer-api
 
